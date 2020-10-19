@@ -13,13 +13,6 @@ fi
 fancy_echo "cloning and applying dotfiles ..."
 chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
 
-fancy_echo "installing omf"
-if [ ! -d "$HOME/.local/share/omf" ]; then
-  git clone https://github.com/oh-my-fish/oh-my-fish
-  cd oh-my-fish
-  bin/install --offline
-fi
-
 fancy_echo "install node for ohana-web-search ..."
 nodenv install 8.17.0
 
@@ -47,4 +40,11 @@ if ! grep -qs "fish" /etc/shells; then
  fancy_echo "Adding fish to /etc/shells..."
  echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
  chsh -s /usr/local/bin/fish
+fi
+
+fancy_echo "installing omf"
+if [ ! -d "$HOME/.local/share/omf" ]; then
+  git clone https://github.com/oh-my-fish/oh-my-fish
+  cd oh-my-fish
+  bin/install --offline
 fi
