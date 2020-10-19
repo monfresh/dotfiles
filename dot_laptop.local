@@ -1,0 +1,50 @@
+#!/bin/sh
+
+fancy_echo "Running your customizations from ~/.laptop.local ..."
+
+if [ -f "$HOME/Brewfile.local" ]; then
+  if brew bundle --file="$HOME/Brewfile.local"; then
+    fancy_echo "All items in Brewfile.local were installed successfully."
+  else
+    fancy_echo "Some items in Brewfile.local were not installed successfully."
+  fi
+fi
+
+fancy_echo "cloning and applying dotfiles ..."
+chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
+
+fancy_echo "installing omf"
+if [ ! -d "$HOME/.local/share/omf" ]; then
+  git clone https://github.com/oh-my-fish/oh-my-fish
+  cd oh-my-fish
+  bin/install --offline
+fi
+
+fancy_echo "install node for ohana-web-search ..."
+nodenv install 8.17.0
+
+yarn global add prettier
+
+# macOS prefs
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.dock wvous-tr-corner -int 5
+defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -int 0
+defaults write com.apple.screensaver askForPasswordDelay -int 5
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# Add fish to /etc/shells and change to fish
+if ! grep -qs "fish" /etc/shells; then
+ fancy_echo "Adding fish to /etc/shells..."
+ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+ chsh -s /usr/local/bin/fish
+fi

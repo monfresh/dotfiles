@@ -1,0 +1,26 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = Moncef Belyamani
+	email = "{{ .email }}"
+[alias]
+	co = checkout
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	fresh = "!git co master && git pull && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	publish = "!git push -u origin $(git branch-name)"
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+	quotepath = false
+	editor = subl -n -w
+	autocrlf = input
+[credential]
+	helper = osxkeychain
+[rebase]
+	autosquash = true
+[push]
+	default = simple

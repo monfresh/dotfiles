@@ -1,0 +1,105 @@
+brew 'bat'
+brew 'chezmoi'
+brew 'chruby-fish'
+brew 'exa'
+brew 'fish'
+brew 'grc'
+# brew 'highlight'
+brew 'httpie'
+brew 'hugo'
+brew 'mas'
+brew 'nodenv'
+brew 'redis'
+brew 'shellcheck'
+brew 'tldr'
+brew 'yarn'
+
+# cask 'airfoil'
+cask 'alfred'
+# cask 'anki'
+# cask 'ankiapp-anki'
+cask 'appzapper'
+# cask 'audio-hijack'
+cask 'backblaze'
+# cask 'beardedspice'
+cask 'beatport-pro'
+cask 'bookmacster'
+# cask 'brave-browser'
+# cask 'caret'
+# cask 'charles'
+cask 'cheatsheet'
+cask 'dash'
+cask 'discord'
+cask 'do-not-disturb'
+cask 'dropbox'
+cask 'dupeguru'
+# cask 'espresso'
+cask 'firefox'
+cask 'forklift'
+cask 'flux'
+cask 'gemini'
+# cask 'gitbook-editor'
+# cask 'insomnia'
+cask 'iterm2'
+cask 'java'
+cask 'keybase'
+cask 'keyboard-maestro'
+cask 'knockknock'
+cask 'lulu'
+cask 'native-access'
+# cask 'notion'
+cask 'oversight'
+# cask 'postman'
+cask 'quicken'
+# cask 'reflector'
+cask 'reikey'
+cask 'screenflow'
+# cask 'skype'
+# cask 'spamsieve'
+cask 'spotify'
+cask 'sublime-text'
+cask 'superduper'
+cask 'timing'
+cask 'tower'
+# cask 'vlc'
+cask 'qlcolorcode'
+cask 'qlimagesize'
+cask 'qlmarkdown'
+cask 'qlstephen'
+cask 'quicklook-json'
+# cask 'vox'
+# cask 'wiretap-studio'
+cask 'zoomus'
+
+# Fonts
+tap 'caskroom/fonts'
+cask 'font-inconsolata'
+cask 'font-source-code-pro-for-powerline'
+cask 'font-source-code-pro'
+
+mas '1Password', id: 1333542190
+mas 'Airmail', id: 918858936
+mas 'Bear', id: 1091189122
+mas 'BreakTime', id: 427475982
+mas 'Duplicate Detective', id: 686428787
+mas 'Evernote', id: 406056744
+mas 'Ghostery Lite', id: 1436953057
+mas 'Mactracker', id: 430255202
+mas 'Moom', id: 419330170
+mas 'Popclip', id: 445189367
+mas 'Slack', id: 803453959
+mas 'TwistedWave', id: 408452636
+mas 'WhatsApp', id: 1147396723
+mas 'WireGuard', id: 1451685025
+
+# installed previously. worth another look?
+# Agenda
+# anki
+# coconbutbattery
+# gradient
+# induction
+# popkey
+# terminal-notifier
+# soundflower
+# handbrake
+# micro snitch

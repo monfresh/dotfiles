@@ -1,0 +1,38 @@
+{{- if ne .chezmoi.hostname "work-laptop" }}
+# home only
+alias cdh='cd ~/projects/codeforamerica/ohana-web-search'
+alias cdoh='cd ~/projects/codeforamerica/ohana-api'
+alias cdl='cd ~/projects/monfresh/laptop'
+alias cdmb='cd ~/projects/monfresh/blog'
+alias smco='cd ~/projects/smcgov/ohana-api-smc'
+alias smcw='cd ~/projects/smcgov/SMC-Connect'
+{{- end }}
+
+# common
+alias s='open -a "Sublime Text"'
+alias cdp='cd ~/projects/'
+alias gpom='git push origin master'
+alias gphm='git push heroku master'
+alias rof='bundle exec rspec --only-failures'
+alias fact="elinks -dump randomfunfacts.com | grep '^|' | tr -d \|"
+alias bi='bundle install'
+alias bd='brew doctor'
+alias bu='brew update'
+alias laptop='bass < (curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)'
+alias lsa='ls -lahS'
+alias fa='s ~/.fish_aliases'
+alias fv='s ~/.fish_variables'
+alias fc='s ~/.config/fish/config.fish'
+alias fix='git diff --name-only | uniq | xargs subl'
+
+## GIT ##
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gs='git status'
+alias gb='git branch'
+abbr gco 'git checkout'
+abbr gpo 'git push origin'
+alias gca='git commit --amend --no-edit'
+alias gp='git push'
+alias grv='git remote -v'
+
+abbr ber 'bundle exec rspec'
