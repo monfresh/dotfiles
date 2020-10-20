@@ -10,41 +10,188 @@ if [ -f "$HOME/Brewfile.local" ]; then
   fi
 fi
 
+fancy_echo "Uninstalling node from brew because we use nodenv."
+fancy_echo "yarn, which we want, automatically installs node"
+brew uninstall --ignore-dependencies node
+
 fancy_echo "cloning and applying dotfiles ..."
 chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
 
 fancy_echo "install node for ohana-web-search ..."
 nodenv install 8.17.0
 
+fancy_echo "installing prettier globally ..."
 yarn global add prettier
 
-# macOS prefs
+# Add Terminal and other apps like iTerm to
+# system prefs -> security & privacy -> privacy tab -> full disk access.
+# This will allow you to run script to set macOS defaults
+
+fancy_echo "writing macOS defaults ..."
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 defaults write com.apple.dock autohide -bool true
+
+# Enable tap to click on external magic trackpad
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# Enable tap to drag on external magic trackpad
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad DragLock -bool false
+# Enable tap to click on built-in laptop trackpad
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+# Enable tap to drag on external magic trackpad
+defaults write com.apple.driver.AppleMultitouchTrackpad Dragging -bool true
+defaults write com.apple.driver.AppleMultitouchTrackpad DragLock -bool false
+# Enable tap to click on login screen
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# finder prefs
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
-defaults write com.apple.dock wvous-tr-corner -int 5
+# Open new finder windows in home folder
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Possible values for hot corners:
+#  0: no-op
+#  2: Mission Control (all windows)
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+
+# Top-right hot corner to lock the screen
+defaults write com.apple.dock wvous-tr-corner -int 13
 defaults write com.apple.dock wvous-tr-modifier -int 0
-defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -int 0
-defaults write com.apple.screensaver askForPasswordDelay -int 5
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Disable annoying defaults that interfere with writing code
+# Disable spelling autocorrect
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Disable automatic capitalization
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+# Disable adding period with double-space
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+# Disable smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# Disable smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable iTerm's prompt when quitting
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# Enable the Develop menu in Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Use 24-hour clock
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm:ss"
+
+# Add additional search attirbutes to Finder
+search_attributes=(
+  kMDItemWhereFroms
+  kMDItemDisplayName
+  kMDItemTextContent
+  kMDItemKind
+  kMDItemAudioBitRate
+  kMDItemLastUsedDate
+  kMDItemBitsPerSample
+  kMDItemPhysicalSize
+  kMDItemFSName
+  kMDItemDocumentContainer
+  kMDItemContentCreationDate
+  kMDItemURL
+  kMDItemFSContentChangeDate
+  "com_apple_RawQueryAttribute"
+  "com_apple_SearchSystemFilesAttribute"
+)
+for i in "${search_attributes[@]}"
+do
+  if [[ -z $(defaults read com.apple.finder SlicesRootAttributes | grep $i) ]]; then
+    defaults write com.apple.finder SlicesRootAttributes -array-add $i
+  fi
+done
+
+# Change Safari search engine to Duck Duck Go
+
+fancy_echo "Done writing macOS defaults. Logout or restart to apply the changes."
+
+fancy_echo "Setting app preferences ..."
+# Install Sublime Text settings
+# 3 options: https://packagecontrol.io/packages/Sync%20Settings
+# or Dropbox or Git: https://packagecontrol.io/docs/syncing
+
+# Disable autocorrect in bear app (can't find prefs file)
+
+# Set up GitHub SSH keys (copy them over) (In fish shell, use: eval (ssh-agent -c)
+
+# turn on filevault
+
+# setup printer
+
+# Tower prefs
+
+# Allow quicklook plugins in Catalina
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+killall Finder
 
 # Add fish to /etc/shells and change to fish
 if ! grep -qs "fish" /etc/shells; then
- fancy_echo "Adding fish to /etc/shells..."
+ fancy_echo "Adding fish to /etc/shells ..."
  echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
  chsh -s /usr/local/bin/fish
 fi
 
-fancy_echo "installing omf"
+fancy_echo "installing omf ..."
 if [ ! -d "$HOME/.local/share/omf" ]; then
   git clone https://github.com/oh-my-fish/oh-my-fish
   cd oh-my-fish
   bin/install --offline
 fi
+
+fancy_echo "Now that the script is done, follow these manual steps ..."
+fancy_echo "First, setup Dropbox, and wait for it to sync everything."
+
+# https://manytricks.com/osticket/kb/faq.php?id=53
+fancy_echo "To set up Moom prefs, run:"
+fancy_echo "defaults import com.manytricks.Moom ~/Dropbox/Moom/Moom.plist"
+
+# https://wiki.keyboardmaestro.com/Syncing_Macros_Between_Macs
+fancy_echo "To import Keyboard Maestro macros:"
+fancy_echo "Select File->Start Syncing, select Open Existing, read the dialog, "
+fancy_echo "then select the sync file in ~/Dropbox/Keyboard Maestro, then import unique macros if any."
+
+# https://github.com/trailofbits/algo#adding-or-removing-users
+# https://github.com/trailofbits/algo#apple-devices
+fancy_echo "To add Algo profiles:"
+fancy_echo "1. On the source Mac, update the `users` list in `config.cfg`"
+fancy_echo "2. `cd` to the algo directory, and `source .env/bin/activate`"
+fancy_echo "3. Run `./algo update-users`"
+fancy_echo "4. Put the new profile in Dropbox"
+fancy_echo "5. On the target Mac, open WireGuard, click on it in the menu bar and open the profile via 'Import tunnel from file'."
+
+# https://devcenter.heroku.com/articles/git#http-git-authentication
+fancy_echo "To setup Heroku auth, run `heroku login`."
+fancy_echo "This will automatically create a token in ~/.netrc"
+
+fancy_echo "To sync iTerm prefs:"
+fancy_echo "1. On the source Mac, create a folder in Dropbox to store the prefs."
+fancy_echo "2. Go to Preferences->General->Preferences."
+fancy_echo "3. Check 'Load preferences from a custom folder or URL'"
+fancy_echo "4. Click Browse and select the Dropbox folder."
+fancy_echo "5. Click Save Current Settings to Folder"
+fancy_echo "6. On one Mac only, check 'Save changes to folder when iTerm2 quits'."
+fancy_echo "7. On the target Mac, repeat steps 2-4"
