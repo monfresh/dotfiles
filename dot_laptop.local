@@ -29,8 +29,12 @@ else
   nodenv install 8.17.0
 fi
 
-fancy_echo "installing prettier globally ..."
-yarn global add prettier
+if command -v prettier >/dev/null
+  fancy_echo "Prettier is already installed. Skipping ..."
+else
+  fancy_echo "Installing prettier globally ..."
+  yarn global add prettier
+fi
 
 if brew list -1 --formula | grep -Fqx node; then
   fancy_echo "Uninstalling node from brew because we use nodenv."
