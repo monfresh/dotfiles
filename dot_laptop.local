@@ -125,22 +125,17 @@ do
   fi
 done
 
-# Change Safari search engine to Duck Duck Go
+fancy_echo "Setting search engine to DuckDuckGo ..."
+defaults write -g NSPreferredWebServices "{NSWebServicesProviderWebSearch = { NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = \"com.duckduckgo\"; }; }"
+defaults write com.apple.Safari SearchProviderIdentifier -string "com.duckduckgo"
 
 fancy_echo "Done writing macOS defaults. Logout or restart to apply the changes."
 
 fancy_echo "Setting app preferences ..."
-# Install Sublime Text settings
-# 3 options: https://packagecontrol.io/packages/Sync%20Settings
-# or Dropbox or Git: https://packagecontrol.io/docs/syncing
 
 # Disable autocorrect in bear app (can't find prefs file)
 
 # Set up GitHub SSH keys (copy them over) (In fish shell, use: eval (ssh-agent -c)
-
-# turn on filevault
-
-# setup printer
 
 # Tower prefs
 
@@ -165,6 +160,14 @@ fi
 fancy_echo "Now that the script is done, follow these manual steps ..."
 fancy_echo "First, setup Dropbox, and wait for it to sync everything."
 
+# https://packagecontrol.io/docs/syncing
+fancy_echo "To sync Sublime Text 3 settings with Dropbox:"
+fancy_echo "Open Sublime Text to populate Application Support"
+fancy_echo "Then run:"
+fancy_echo "cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
+fancy_echo "rm -r User"
+fancy_echo "ln -s ~/Dropbox/Sublime/User"
+
 # https://manytricks.com/osticket/kb/faq.php?id=53
 fancy_echo "To set up Moom prefs, run:"
 fancy_echo "defaults import com.manytricks.Moom ~/Dropbox/Moom/Moom.plist"
@@ -187,6 +190,7 @@ fancy_echo "5. On the target Mac, open WireGuard, click on it in the menu bar an
 fancy_echo "To setup Heroku auth, run `heroku login`."
 fancy_echo "This will automatically create a token in ~/.netrc"
 
+# https://iterm2.com/documentation-preferences-general.html
 fancy_echo "To sync iTerm prefs:"
 fancy_echo "1. On the source Mac, create a folder in Dropbox to store the prefs."
 fancy_echo "2. Go to Preferences->General->Preferences."
@@ -195,3 +199,8 @@ fancy_echo "4. Click Browse and select the Dropbox folder."
 fancy_echo "5. Click Save Current Settings to Folder"
 fancy_echo "6. On one Mac only, check 'Save changes to folder when iTerm2 quits'."
 fancy_echo "7. On the target Mac, repeat steps 2-4"
+
+fancy_echo "Other things to do:"
+fancy_echo "* Turn on FileVault *"
+fancy_echo "* Setup the printer via system prefs *."
+fancy_echo "It should automatically find it in the network."
