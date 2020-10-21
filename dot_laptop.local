@@ -10,10 +10,11 @@ if [ -f "$HOME/Brewfile.local" ]; then
   fi
 fi
 
-if brew list -1 --formula | grep -Fqx node; then
-  fancy_echo "Uninstalling node from brew because we use nodenv."
-  fancy_echo "yarn, which we want, automatically installs node"
-  brew uninstall --ignore-dependencies node
+fancy_echo "Updating shell file to work with nodenv"
+if [[ $SHELL == *fish ]]; then
+  append_to_file "$shell_file" 'status --is-interactive; and source (nodenv init -|psub)'
+else
+  append_to_file "$shell_file" 'eval "$(nodenv init -)"'
 fi
 
 fancy_echo "cloning and applying dotfiles ..."
@@ -28,6 +29,12 @@ fi
 
 fancy_echo "installing prettier globally ..."
 yarn global add prettier
+
+if brew list -1 --formula | grep -Fqx node; then
+  fancy_echo "Uninstalling node from brew because we use nodenv."
+  fancy_echo "yarn, which we want, automatically installs node"
+  brew uninstall --ignore-dependencies node
+fi
 
 # Add Terminal and other apps like iTerm to
 # system prefs -> security & privacy -> privacy tab -> full disk access.
