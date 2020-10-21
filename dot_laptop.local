@@ -10,9 +10,11 @@ if [ -f "$HOME/Brewfile.local" ]; then
   fi
 fi
 
-fancy_echo "Uninstalling node from brew because we use nodenv."
-fancy_echo "yarn, which we want, automatically installs node"
-brew uninstall --ignore-dependencies node
+if brew list -1 --formula | grep -Fqx node; then
+  fancy_echo "Uninstalling node from brew because we use nodenv."
+  fancy_echo "yarn, which we want, automatically installs node"
+  brew uninstall --ignore-dependencies node
+fi
 
 fancy_echo "cloning and applying dotfiles ..."
 chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
