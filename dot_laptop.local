@@ -47,6 +47,13 @@ fancy_echo "writing macOS defaults ..."
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
+# Some prefs, like Safari, need Terminal to have Full Disk Access
+if ( ! ls ~/Library/Containers/com.apple.Safari 2>&1 ) | grep -q 'Operation not permitted'; then
+  echo 'Add `Terminal.app` to System Preferences -> Security -> Privacy -> Full Disk Access' 1>&2
+  /usr/bin/open 'x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles'
+  exit 1
+fi
+
 defaults write com.apple.dock autohide -bool true
 
 # Enable tap to click on external magic trackpad
@@ -67,6 +74,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 # Open new finder windows in home folder
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -108,6 +116,12 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Enable the Develop menu in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+fancy_echo "Setting search engine to DuckDuckGo ..."
+defaults write -g NSPreferredWebServices "{NSWebServicesProviderWebSearch = { NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = \"com.duckduckgo\"; }; }"
+defaults write com.apple.Safari SearchProviderIdentifier -string "com.duckduckgo"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
@@ -139,10 +153,6 @@ do
     defaults write com.apple.finder SlicesRootAttributes -array-add $i
   fi
 done
-
-fancy_echo "Setting search engine to DuckDuckGo ..."
-defaults write -g NSPreferredWebServices "{NSWebServicesProviderWebSearch = { NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = \"com.duckduckgo\"; }; }"
-defaults write com.apple.Safari SearchProviderIdentifier -string "com.duckduckgo"
 
 fancy_echo "Done writing macOS defaults. Logout or restart to apply the changes."
 
@@ -195,14 +205,14 @@ fancy_echo "then select the sync file in ~/Dropbox/Keyboard Maestro, then import
 # https://github.com/trailofbits/algo#adding-or-removing-users
 # https://github.com/trailofbits/algo#apple-devices
 fancy_echo "To add Algo profiles:"
-fancy_echo "1. On the source Mac, update the `users` list in `config.cfg`"
-fancy_echo "2. `cd` to the algo directory, and `source .env/bin/activate`"
-fancy_echo "3. Run `./algo update-users`"
+fancy_echo "1. On the source Mac, update the 'users' list in 'config.cfg'"
+fancy_echo "2. 'cd' to the algo directory, and 'source .env/bin/activate'"
+fancy_echo "3. Run './algo update-users'"
 fancy_echo "4. Put the new profile in Dropbox"
 fancy_echo "5. On the target Mac, open WireGuard, click on it in the menu bar and open the profile via 'Import tunnel from file'."
 
 # https://devcenter.heroku.com/articles/git#http-git-authentication
-fancy_echo "To setup Heroku auth, run `heroku login`."
+fancy_echo "To setup Heroku auth, run 'heroku login'."
 fancy_echo "This will automatically create a token in ~/.netrc"
 
 # https://iterm2.com/documentation-preferences-general.html
