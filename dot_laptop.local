@@ -119,9 +119,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Enable the Develop menu in Safari
+defaults write com.apple.Safari ShowDevelopMenu -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari WebKitPreferences.developerExtrasEnabled -bool true
 
 fancy_echo "Setting search engine to DuckDuckGo ..."
 defaults write -g NSPreferredWebServices "{NSWebServicesProviderWebSearch = { NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = \"com.duckduckgo\"; }; }"
