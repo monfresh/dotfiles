@@ -41,7 +41,6 @@ cask 'gemini'
 # cask 'gitbook-editor'
 # cask 'insomnia'
 cask 'iterm2'
-cask 'java'
 cask 'keybase'
 cask 'keyboard-maestro'
 cask 'knockknock'
@@ -74,7 +73,7 @@ cask 'zoomus'
 # Fonts
 tap 'homebrew/cask-fonts'
 cask 'font-inconsolata'
-cask 'font-source-code-pro-for-powerline'
+# cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 
 mas '1Password', id: 1333542190
