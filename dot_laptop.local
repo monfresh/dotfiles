@@ -17,6 +17,8 @@ else
   append_to_file "$shell_file" 'eval "$(nodenv init -)"'
 fi
 
+source $shell_file
+
 fancy_echo "cloning and applying dotfiles ..."
 chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
 
