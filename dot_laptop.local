@@ -44,6 +44,7 @@ fi
 fancy_echo "Cloning GitHub repos ..."
 gh auth login --with-token < ~/.github_token.txt
 
+mkdir ~/projects
 mkdir ~/projects/codeforamerica
 cd ~/projects/codeforamerica
 gh repo clone codeforamerica/ohana-api
