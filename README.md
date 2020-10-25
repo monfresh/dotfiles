@@ -12,6 +12,11 @@ To set up a new Mac:
 touch ~/.github_token.txt
 echo "token_from_1Password" >> ~/.github_token.txt
 ```
+This will allow us to authenticate to GitHub with the `gh` cli tool. See this
+line in `dot_laptop.local`:
+```shell
+gh auth login --with-token < ~/.github_token.txt`
+```
 4. Create `~/.config/chezmoi/chezmoi.toml` and add machine-specific variables:
 ```shell
 [data]
@@ -19,8 +24,8 @@ echo "token_from_1Password" >> ~/.github_token.txt
   location = "home"
 ```
 This allows conditionally excluding or including things based on a work vs home
-machine, for example.
-4. Install chezmoi and apply the dotfiles:
+machine. See [Brewfile.local.tmpl](https://github.com/monfresh/dotfiles/blob/master/Brewfile.local.tmpl) for an example.
+5. Install chezmoi and apply the dotfiles:
 ```shell
 curl -sfL https://git.io/chezmoi | sh
 chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
@@ -31,4 +36,4 @@ chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
 bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
 ```
 8. Restart the computer.
-9. Read the end of `~/.laptop.local` for additional manual setup instructions.
+9. Read `~/.laptop.manual` for additional manual setup instructions.
