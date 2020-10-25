@@ -1,5 +1,5 @@
 brew 'bat'
-# brew 'chezmoi'
+brew 'chezmoi'
 brew 'chruby-fish'
 brew 'exa'
 brew 'fish'

@@ -2,12 +2,6 @@
 
 fancy_echo "Running your customizations from ~/.laptop.local ..."
 
-fancy_echo "Installing chezmoi ..."
-curl -sfL https://git.io/chezmoi | sh
-
-fancy_echo "Fetching and applying dotfiles with chezmoi ..."
-chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
-
 if [ -f "$HOME/Brewfile.local" ]; then
   fancy_echo "Installing tools and apps from Brewfile.local ..."
   if brew bundle --file="$HOME/Brewfile.local"; then
@@ -16,6 +10,9 @@ if [ -f "$HOME/Brewfile.local" ]; then
     fancy_echo "Some items in Brewfile.local were not installed successfully."
   fi
 fi
+
+fancy_echo "Fetching and applying dotfiles with chezmoi ..."
+chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
 
 fancy_echo "Updating shell file to work with nodenv ..."
 if [[ $SHELL == *fish ]]; then
