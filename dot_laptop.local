@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 fancy_echo "Running your customizations from ~/.laptop.local ..."
 
 if [ -f "$HOME/Brewfile.local" ]; then
@@ -53,15 +55,25 @@ if [ ! -d "$HOME/projects/codeforamerica" ]; then
 fi
 
 cd ~/projects/codeforamerica
-gh repo clone codeforamerica/ohana-api
-gh repo clone codeforamerica/ohana-web-search
+
+#if [ ! -d "$HOME/projects/codeforamerica/ohana-api" ]; then
+  gh repo clone codeforamerica/ohana-api || true
+#fi
+
+if [ ! -d "$HOME/projects/codeforamerica/ohana-web-search" ]; then
+  gh repo clone codeforamerica/ohana-web-search
+fi
 
 if [ ! -d "$HOME/projects/monfresh" ]; then
   mkdir "$HOME/projects/monfresh"
 fi
 
 cd ~/projects/monfresh
-gh repo clone monfresh/laptop
+
+if [ ! -d "$HOME/projects/monfresh/laptop" ]; then
+  gh repo clone monfresh/laptop
+fi
+
 gh repo clone monfresh/install-ruby-on-macos
 gh repo clone monfresh/blog
 gh repo clone monfresh/monfresh-dot-com
