@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+fancy_echo "Updating shell file to work with nodenv ..."
+if [[ $SHELL == *fish ]]; then
+  append_to_file "$shell_file" 'status --is-interactive; and source (nodenv init -|psub)'
+else
+  append_to_file "$shell_file" 'eval "$(nodenv init -)"'
+fi
+
+fancy_echo "Installing node for ohana-web-search ..."
+if nodenv versions | grep 8.17.0; then
+  fancy_echo "node 8.17.0 already installed."
+else
+  nodenv install 8.17.0
+fi
+
+if command -v prettier >/dev/null; then
+  fancy_echo "Prettier is already installed. Skipping ..."
+else
+  fancy_echo "Installing prettier globally ..."
+  yarn global add prettier
+fi
+
+if brew list -1 --formula | grep -Fqx node; then
+  fancy_echo "Uninstalling node from brew because we use nodenv."
+  fancy_echo "(yarn, which we want, automatically installs node)"
+  brew uninstall --ignore-dependencies node
+fi
