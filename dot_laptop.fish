@@ -9,8 +9,5 @@ fi
 
 if [ ! -d "$HOME/.local/share/omf" ]; then
   fancy_echo "installing omf ..."
-  cd ~/projects
-  git clone https://github.com/oh-my-fish/oh-my-fish
-  cd oh-my-fish
-  bin/install --offline
+  curl -L https://get.oh-my.fish | fish
 fi
