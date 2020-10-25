@@ -36,4 +36,7 @@ chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
 bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
 ```
 8. Restart the computer.
-9. Read `~/.laptop.manual` for additional manual setup instructions.
+9. Read `~/.laptop.manual.md` for additional manual setup instructions:
+```shell
+bat ~/.laptop.manual.md
+```

@@ -2,9 +2,8 @@
 First, setup Dropbox, and wait for it to sync everything.
 
 ## Sublime Text 3
-To [sync Sublime Text 3 settings](https://packagecontrol.io/docs/syncing) with Dropbox:
-Open Sublime Text to populate Application Support
-Then run:
+To [sync Sublime Text 3 settings](https://packagecontrol.io/docs/syncing) with Dropbox,
+open Sublime Text to populate Application Support, then run:
 ```shell
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
 rm -r User
@@ -29,7 +28,7 @@ To [add Algo profiles](https://github.com/trailofbits/algo#adding-or-removing-us
 3. Run `./algo update-users`
 4. Put the new profile in Dropbox
 5. On the [target Mac](https://github.com/trailofbits/algo#apple-devices), open WireGuard, click on it in the menu bar and open the
-profile via 'Import tunnel from file'.
+profile via `Import tunnel from file`.
 
 ## Heroku
 To set up [Heroku auth](https://devcenter.heroku.com/articles/git#http-git-authentication), run `heroku login`.
@@ -47,4 +46,4 @@ To [sync iTerm prefs](https://iterm2.com/documentation-preferences-general.html)
 
 ## Other
 - Turn on FileVault
-- Setup the printer via system prefs. It should automatically find it in the network.
+- Set up the printer via system prefs. It should automatically find it in the network.
