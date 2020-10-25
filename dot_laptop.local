@@ -55,14 +55,9 @@ if [ ! -d "$HOME/projects/codeforamerica" ]; then
 fi
 
 cd ~/projects/codeforamerica
+gh repo clone codeforamerica/ohana-api || true
 
-#if [ ! -d "$HOME/projects/codeforamerica/ohana-api" ]; then
-  gh repo clone codeforamerica/ohana-api || true
-#fi
-
-if [ ! -d "$HOME/projects/codeforamerica/ohana-web-search" ]; then
-  gh repo clone codeforamerica/ohana-web-search
-fi
+gh repo clone codeforamerica/ohana-web-search || true
 
 if [ ! -d "$HOME/projects/monfresh" ]; then
   mkdir "$HOME/projects/monfresh"
@@ -70,14 +65,11 @@ fi
 
 cd ~/projects/monfresh
 
-if [ ! -d "$HOME/projects/monfresh/laptop" ]; then
-  gh repo clone monfresh/laptop
-fi
-
-gh repo clone monfresh/install-ruby-on-macos
-gh repo clone monfresh/blog
-gh repo clone monfresh/monfresh-dot-com
-gh repo clone monfresh/ohana-sms
+gh repo clone monfresh/laptop || true
+gh repo clone monfresh/install-ruby-on-macos || true
+gh repo clone monfresh/blog || true
+gh repo clone monfresh/monfresh-dot-com || true
+gh repo clone monfresh/ohana-sms || true
 
 # mkdir ~/projects/smcgov
 # cd ~/projects/smcgov
@@ -219,6 +211,7 @@ fi
 
 if [ ! -d "$HOME/.local/share/omf" ]; then
   fancy_echo "installing omf ..."
+  cd ~/projects
   git clone https://github.com/oh-my-fish/oh-my-fish
   cd oh-my-fish
   bin/install --offline
