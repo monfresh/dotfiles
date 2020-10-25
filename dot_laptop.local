@@ -2,7 +2,14 @@
 
 fancy_echo "Running your customizations from ~/.laptop.local ..."
 
+fancy_echo "Installing chezmoi ..."
+curl -sfL https://git.io/chezmoi | sh
+
+fancy_echo "Fetching and applying dotfiles with chezmoi ..."
+chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
+
 if [ -f "$HOME/Brewfile.local" ]; then
+  fancy_echo "Installing tools and apps from Brewfile.local ..."
   if brew bundle --file="$HOME/Brewfile.local"; then
     fancy_echo "All items in Brewfile.local were installed successfully."
   else
@@ -10,19 +17,14 @@ if [ -f "$HOME/Brewfile.local" ]; then
   fi
 fi
 
-fancy_echo "Updating shell file to work with nodenv"
+fancy_echo "Updating shell file to work with nodenv ..."
 if [[ $SHELL == *fish ]]; then
   append_to_file "$shell_file" 'status --is-interactive; and source (nodenv init -|psub)'
 else
   append_to_file "$shell_file" 'eval "$(nodenv init -)"'
 fi
 
-source $shell_file
-
-fancy_echo "cloning and applying dotfiles ..."
-chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
-
-fancy_echo "install node for ohana-web-search ..."
+fancy_echo "Installing node for ohana-web-search ..."
 if nodenv versions | grep 8.17.0; then
   fancy_echo "node 8.17.0 already installed."
 else
@@ -38,13 +40,31 @@ fi
 
 if brew list -1 --formula | grep -Fqx node; then
   fancy_echo "Uninstalling node from brew because we use nodenv."
-  fancy_echo "yarn, which we want, automatically installs node"
+  fancy_echo "(yarn, which we want, automatically installs node)"
   brew uninstall --ignore-dependencies node
 fi
 
-# Add Terminal and other apps like iTerm to
-# system prefs -> security & privacy -> privacy tab -> full disk access.
-# This will allow you to run script to set macOS defaults
+fancy_echo "Cloning GitHub repos ..."
+gh auth login --with-token < ~/.github_token.txt
+
+mkdir ~/projects/codeforamerica
+cd ~/projects/codeforamerica
+gh repo clone codeforamerica/ohana-api
+gh repo clone codeforamerica/ohana-web-search
+gh repo clone codeforamerica/ohana-sms
+
+mkdir ~/projects/monfresh
+cd ~/projects/monfresh
+gh repo clone monfresh/laptop
+gh repo clone monfresh/install-ruby-on-macos
+gh repo clone monfresh/blog
+gh repo clone monfresh/monfresh-dot-com
+
+# mkdir ~/projects/smcgov
+# cd ~/projects/smcgov
+# gh repo clone smcgov/ohana-api-smc
+# gh repo clone smcgov/SMC-Connect
+# gh repo clone smcgov/ohana-sms-smc
 
 fancy_echo "writing macOS defaults ..."
 # Close any open System Preferences panes, to prevent them from overriding
@@ -64,11 +84,13 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 # Enable tap to drag on external magic trackpad
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+/usr/libexec/PlistBuddy -c "Set Dragging true" ~/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad.plist
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad DragLock -bool false
 # Enable tap to click on built-in laptop trackpad
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # Enable tap to drag on external magic trackpad
 defaults write com.apple.driver.AppleMultitouchTrackpad Dragging -bool true
+/usr/libexec/PlistBuddy -c "Set Dragging true" ~/Library/Preferences/com.apple.driver.AppleMultitouchTrackpad.plist
 defaults write com.apple.driver.AppleMultitouchTrackpad DragLock -bool false
 # Enable tap to click on login screen
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -164,12 +186,9 @@ fancy_echo "Setting app preferences ..."
 
 # Disable autocorrect in bear app (can't find prefs file)
 
-# Set up GitHub SSH keys (copy them over) (In fish shell, use: eval (ssh-agent -c)
-
-# Tower prefs
-
-# Allow quicklook plugins in Catalina
+fancy_echo "Allowing quicklook plugins ..."
 xattr -d -r com.apple.quarantine ~/Library/QuickLook
+fancy_echo "Restarting the finder ..."
 killall Finder
 
 # Add fish to /etc/shells and change to fish
@@ -179,8 +198,8 @@ if ! grep -qs "fish" /etc/shells; then
  chsh -s /usr/local/bin/fish
 fi
 
-fancy_echo "installing omf ..."
 if [ ! -d "$HOME/.local/share/omf" ]; then
+  fancy_echo "installing omf ..."
   git clone https://github.com/oh-my-fish/oh-my-fish
   cd oh-my-fish
   bin/install --offline
