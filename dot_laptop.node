@@ -2,13 +2,6 @@
 
 set -e
 
-fancy_echo "Updating shell file to work with nodenv ..."
-if [[ $SHELL == *fish ]]; then
-  append_to_file "$shell_file" 'status --is-interactive; and source (nodenv init -|psub)'
-else
-  append_to_file "$shell_file" 'eval "$(nodenv init -)"'
-fi
-
 fancy_echo "Installing node for ohana-web-search ..."
 if nodenv versions | grep 8.17.0; then
   fancy_echo "node 8.17.0 already installed."

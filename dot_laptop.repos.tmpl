@@ -9,6 +9,8 @@ if [ ! -d "$HOME/projects" ]; then
   mkdir "$HOME/projects"
 fi
 
+# Clone these on home machines only
+{{- if eq .location "home" }}
 if [ ! -d "$HOME/projects/codeforamerica" ]; then
   mkdir "$HOME/projects/codeforamerica"
 fi
@@ -32,3 +34,4 @@ cd ~/projects/monfresh
 # gh repo clone smcgov/ohana-api-smc
 # gh repo clone smcgov/SMC-Connect
 # gh repo clone smcgov/ohana-sms-smc
+{{- end }}

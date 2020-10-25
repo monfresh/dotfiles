@@ -39,6 +39,15 @@ cask 'vlc'
 # cask 'wiretap-studio'
 {{- end }}
 
+# Install these on work machines only
+{{- if eq .location "work" }}
+cask 'goland'
+cask 'harvest'
+cask 'keka'
+cask 'microsoft-teams'
+cask 'tableplus'
+{{- end }}
+
 cask 'alfred'
 # cask 'anki'
 # cask 'ankiapp-anki'
@@ -49,14 +58,17 @@ cask 'backblaze'
 cask 'cheatsheet'
 cask 'dash'
 cask 'discord'
+cask 'docker'
 # cask 'do-not-disturb'
 cask 'dropbox'
+cask 'farrago'
 cask 'firefox'
 cask 'flux'
 cask 'iterm2'
 cask 'keybase'
 cask 'keyboard-maestro'
 cask 'knockknock'
+cask 'loopback'
 # cask 'lulu'
 # cask 'notion'
 # cask 'oversight'
