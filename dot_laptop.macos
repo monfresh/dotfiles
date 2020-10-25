@@ -120,4 +120,9 @@ done
 # Disable the startup sound
 sudo nvram SystemAudioVolume=" "
 
+fancy_echo "Allowing quicklook plugins ..."
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+fancy_echo "Restarting the finder ..."
+killall Finder
+
 fancy_echo "Done writing macOS defaults. Logout or restart to apply the changes."

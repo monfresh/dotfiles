@@ -28,28 +28,9 @@ if [ -f "$HOME/.laptop.macos" ]; then
   . "$HOME/.laptop.macos"
 fi
 
-fancy_echo "Setting app preferences ..."
-
-# Disable autocorrect in bear app (can't find prefs file)
-
-fancy_echo "Allowing quicklook plugins ..."
-xattr -d -r com.apple.quarantine ~/Library/QuickLook
-fancy_echo "Restarting the finder ..."
-killall Finder
-
-# Add fish to /etc/shells and change to fish
-if ! grep -qs "fish" /etc/shells; then
- fancy_echo "Adding fish to /etc/shells ..."
- echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
- chsh -s /usr/local/bin/fish
-fi
-
-if [ ! -d "$HOME/.local/share/omf" ]; then
-  fancy_echo "installing omf ..."
-  cd ~/projects
-  git clone https://github.com/oh-my-fish/oh-my-fish
-  cd oh-my-fish
-  bin/install --offline
+if [ -f "$HOME/.laptop.fish" ]; then
+  # shellcheck source=/dev/null
+  . "$HOME/.laptop.fish"
 fi
 
 fancy_echo "Now that the script is done, follow these manual steps ..."
