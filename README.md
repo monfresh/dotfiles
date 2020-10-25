@@ -12,6 +12,14 @@ To set up a new Mac:
 touch ~/.github_token.txt
 echo "token_from_1Password" >> ~/.github_token.txt
 ```
+4. Create `~/.config/chezmoi/chezmoi.toml` and add machine-specific variables:
+```shell
+[data]
+  email = "moncef@example.com"
+  location = "home"
+```
+This allows conditionally excluding or including things based on a work vs home
+machine, for example.
 4. Install chezmoi and apply the dotfiles:
 ```shell
 curl -sfL https://git.io/chezmoi | sh
