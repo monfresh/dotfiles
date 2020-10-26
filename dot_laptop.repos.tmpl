@@ -3,7 +3,7 @@
 set -e
 
 fancy_echo "Cloning GitHub repos ..."
-gh auth login --with-token < ~/.github_token.txt
+gh auth login --with-token < ~/.github_token
 
 if [ ! -d "$HOME/projects" ]; then
   mkdir "$HOME/projects"

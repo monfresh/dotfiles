@@ -6,7 +6,9 @@ fancy_echo "Installing chezmoi and applying dotfiles ..."
 brew bundle --file=- <<EOF
     brew 'chezmoi'
 EOF
-chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
+if [ ! -f "$HOME/.config/chezmoi/chezmoi.toml" ]; then
+  chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
+fi
 
 fancy_echo "Running your customizations from ~/.laptop.local ..."
 
