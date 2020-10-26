@@ -2,7 +2,7 @@
 
 set -e
 
-fancy_echo "writing macOS defaults ..."
+echo "writing macOS defaults ..."
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -16,18 +16,16 @@ fi
 
 defaults write com.apple.dock autohide -bool true
 
-# Enable tap to click on external magic trackpad
+# Enable tap to click and drag on external magic trackpad
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-# Enable tap to drag on external magic trackpad
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
-/usr/libexec/PlistBuddy -c "Set Dragging true" ~/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad.plist
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad DragLock -bool false
-# Enable tap to click on built-in laptop trackpad
+
+# Enable tap to click and drag on built-in laptop trackpad
 defaults write com.apple.driver.AppleMultitouchTrackpad Clicking -bool true
-# Enable tap to drag on external magic trackpad
 defaults write com.apple.driver.AppleMultitouchTrackpad Dragging -bool true
-/usr/libexec/PlistBuddy -c "Set Dragging true" ~/Library/Preferences/com.apple.driver.AppleMultitouchTrackpad.plist
-defaults write com.apple.driver.AppleMultitouchTrackpad DragLock -bool false
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
+
 # Enable tap to click on login screen
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -117,12 +115,9 @@ do
   fi
 done
 
-# Disable the startup sound
-sudo nvram SystemAudioVolume=" "
-
-fancy_echo "Allowing quicklook plugins ..."
+echo "Allowing quicklook plugins ..."
 xattr -d -r com.apple.quarantine ~/Library/QuickLook
-fancy_echo "Restarting the finder ..."
+echo "Restarting the finder ..."
 killall Finder
 
-fancy_echo "Done writing macOS defaults. Logout or restart to apply the changes."
+echo "Done writing macOS defaults. Logout or restart to apply the changes."

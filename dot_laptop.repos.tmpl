@@ -11,23 +11,43 @@ fi
 
 # Clone these on home machines only
 {{- if eq .location "home" }}
+
 if [ ! -d "$HOME/projects/codeforamerica" ]; then
   mkdir "$HOME/projects/codeforamerica"
 fi
 cd ~/projects/codeforamerica
-[ ! -d "$HOME/projects/codeforamerica/ohana-api" ] && gh repo clone codeforamerica/ohana-api
-[ ! -d "$HOME/projects/codeforamerica/ohana-web-search" ] && gh repo clone codeforamerica/ohana-web-search
+if [ ! -d "$HOME/projects/codeforamerica/ohana-api" ]; then
+  gh repo clone codeforamerica/ohana-api
+fi
+
+if [ ! -d "$HOME/projects/codeforamerica/ohana-web-search" ]; then
+  gh repo clone codeforamerica/ohana-web-search
+fi
 
 if [ ! -d "$HOME/projects/monfresh" ]; then
   mkdir "$HOME/projects/monfresh"
 fi
 cd ~/projects/monfresh
 
-[ ! -d "$HOME/projects/monfresh/laptop" ] && gh repo clone monfresh/laptop
-[ ! -d "$HOME/projects/monfresh/install-ruby-on-macos" ] && gh repo clone monfresh/install-ruby-on-macos
-[ ! -d "$HOME/projects/monfresh/monfresh-dot-com" ] && gh repo clone monfresh/monfresh-dot-com
-[ ! -d "$HOME/projects/monfresh/ohana-sms" ] && gh repo clone monfresh/ohana-sms
-[ ! -d "$HOME/projects/monfresh/blog" ] && gh repo clone monfresh/blog
+if [ ! -d "$HOME/projects/monfresh/laptop" ]; then
+  gh repo clone monfresh/laptop
+fi
+
+if [ ! -d "$HOME/projects/monfresh/install-ruby-on-macos" ]; then
+  gh repo clone monfresh/install-ruby-on-macos
+fi
+
+if [ ! -d "$HOME/projects/monfresh/monfresh-dot-com" ]; then
+  gh repo clone monfresh/monfresh-dot-com
+fi
+
+if [ ! -d "$HOME/projects/monfresh/ohana-sms" ]; then
+  gh repo clone monfresh/ohana-sms
+fi
+
+if [ ! -d "$HOME/projects/monfresh/blog" ]; then
+  gh repo clone monfresh/blog
+fi
 
 # mkdir ~/projects/smcgov
 # cd ~/projects/smcgov
