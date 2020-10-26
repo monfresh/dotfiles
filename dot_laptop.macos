@@ -2,7 +2,7 @@
 
 set -e
 
-echo "writing macOS defaults ..."
+echo "Writing macOS defaults ..."
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -79,8 +79,7 @@ defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -int 1
 defaults write com.apple.Safari ShowDevelopMenu -int 1
 defaults write com.apple.Safari IncludeDevelopMenu -int 1
 defaults write com.apple.Safari WebKitPreferences.developerExtrasEnabled -bool true
-
-fancy_echo "Setting search engine to DuckDuckGo ..."
+# Set DuckDuckGo as default search engine
 defaults write -g NSPreferredWebServices "{NSWebServicesProviderWebSearch = { NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = \"com.duckduckgo\"; }; }"
 defaults write com.apple.Safari SearchProviderIdentifier -string "com.duckduckgo"
 
