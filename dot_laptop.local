@@ -2,6 +2,12 @@
 
 set -e
 
+fancy_echo "Installing chezmoi and applying dotfiles ..."
+brew bundle --file=- <<EOF
+    brew 'chezmoi'
+EOF
+chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
+
 fancy_echo "Running your customizations from ~/.laptop.local ..."
 
 if [ -f "$HOME/Brewfile.local" ]; then

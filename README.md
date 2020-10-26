@@ -25,12 +25,14 @@ gh auth login --with-token < ~/.github_token.txt`
 ```
 This allows conditionally excluding or including things based on a work vs home
 machine. See [Brewfile.local.tmpl](https://github.com/monfresh/dotfiles/blob/master/Brewfile.local.tmpl) for an example.
-5. Install chezmoi and apply the dotfiles:
-```shell
-curl -sfL https://git.io/chezmoi | sh
-chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
-```
+
 5. Give Terminal full disk access in System Preferences -> Security & Privacy -> Privacy tab -> Full Disk Access
+6. Download `.laptop.local`:
+```shell
+cd ~
+curl --remote-name https://raw.githubusercontent.com/monfresh/dotfiles/master/dot_laptop.local
+mv dot_laptop.local .laptop.local
+```
 7. Run laptop script:
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
