@@ -27,7 +27,7 @@ When prompted for location, enter `home` or `work`, so that the appropriate apps
 and aliases are installed based on whether this is a home computer or work computer.
 See [Brewfile.local.tmpl](https://github.com/monfresh/dotfiles/blob/master/Brewfile.local.tmpl) for an example.
 When prompted for the github_token, get it from 1Password and paste it in.
-This will allow us to authenticate to GitHub with the `gh` cli tool.
+When prompted for the heroku_token, get it from 1Password and paste it in.
 
 7. Restart the computer.
 
