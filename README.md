@@ -10,15 +10,16 @@ To set up a new Mac:
 
 3. Install 1Password and sign in.
 
-4. Download `.laptop.local`:
+4. Quit Terminal (if it's running), and give it full disk access in System Preferences -> Security & Privacy -> Privacy tab -> Full Disk Access
+
+5. Download `.laptop.local`:
 ```shell
 cd ~
 curl --remote-name https://raw.githubusercontent.com/monfresh/dotfiles/master/dot_laptop.local
 mv dot_laptop.local .laptop.local
 ```
-5. Quit Terminal, and give it full disk access in System Preferences -> Security & Privacy -> Privacy tab -> Full Disk Access
 
-6. Relaunch Terminal, and run the laptop script:
+6. Run the laptop script:
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
 ```
