@@ -1,6 +1,6 @@
 machine api.heroku.com
-  login {{ $heroku_email }}
-  password {{ $heroku_token }}
+  login {{ .heroku_email }}
+  password {{ .heroku_token }}
 machine git.heroku.com
-  login {{ $heroku_email }}
-  password {{ $heroku_token }}
+  login {{ .heroku_email }}
+  password {{ .heroku_token }}
