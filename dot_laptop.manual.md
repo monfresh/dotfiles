@@ -44,6 +44,24 @@ To [sync iTerm prefs](https://iterm2.com/documentation-preferences-general.html)
 6. On one Mac only, check `Save changes to folder when iTerm2 quits`.
 7. On the target Mac, repeat steps 2-4
 
+## Alfred
+To [sync Alfred settings](https://www.alfredapp.com/help/advanced/sync/):
+
+On Primary Mac:
+1. Launch Alfred's preferences to the Advanced tab.
+2. In the bottom right, you will see the Syncing settings. Click on "Set preferences folder…"
+3. Choose a location within Dropbox where you want to sync your settings (e.g. ~/Dropbox/Alfred/) and click "Set folder and restart Alfred"
+4. Alfred will relaunch, using the settings location you've just set on Dropbox
+5. You'll see the Dropbox spinning arrows as it syncs your settings to your online account. Allow Dropbox to sync fully before starting setup on your second Mac.
+
+On other Macs:
+**Before you start, ensure that Dropbox is fully up-to-date and has synced all previously changed files from your other Mac.**
+
+1. Check that Dropbox has synced your newly added settings file from your online account. You should see an Alfred.alfredpreferences file in the Dropbox folder you picked, and the Dropbox icon should no longer be showing spinning arrows.
+2. Launch Alfred's preferences to the Advanced tab and click on the "Set preferences folder…"
+3. Find the Dropbox folder in which your first Mac's Alfred.alfredpreferences file is located and click "Set folder and restart Alfred"
+4. Once Alfred has restarted, you'll be using your synced settings.
+
 ## Other
 - Turn on FileVault
 - Set up the printer via system prefs. It should automatically find it in the network.
