@@ -47,3 +47,14 @@ To [sync iTerm prefs](https://iterm2.com/documentation-preferences-general.html)
 ## Other
 - Turn on FileVault
 - Set up the printer via system prefs. It should automatically find it in the network.
+
+## Security & Privacy System Preferences
+### Full Disk Access
+Grant full disk access to these apps:
+* Backblaze
+* Alfred4
+* Bookmacster
+
+### Screen Recording
+* Screenflow
+* Zoom

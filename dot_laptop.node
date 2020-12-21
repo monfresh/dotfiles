@@ -2,11 +2,11 @@
 
 set -e
 
-fancy_echo "Installing node for ohana-web-search ..."
-if nodenv versions | grep 8.17.0; then
-  fancy_echo "node 8.17.0 already installed."
+fancy_echo "Installing node 14.15.3 ..."
+if nodenv versions | grep 14.15.3; then
+  fancy_echo "node 14.15.3 already installed."
 else
-  nodenv install 8.17.0
+  nodenv install 14.15.3
 fi
 
 if command -v prettier >/dev/null; then
