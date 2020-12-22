@@ -15,9 +15,3 @@ else
   fancy_echo "Installing prettier globally ..."
   yarn global add prettier
 fi
-
-if brew list -1 --formula | grep -Fqx node; then
-  fancy_echo "Uninstalling node from brew because we use nodenv."
-  fancy_echo "(yarn, which we want, automatically installs node)"
-  brew uninstall --ignore-dependencies node
-fi
