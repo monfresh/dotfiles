@@ -72,6 +72,7 @@ Grant full disk access to these apps:
 * Backblaze
 * Alfred4
 * Bookmacster
+* iTerm
 
 ### Screen Recording
 * Screenflow
