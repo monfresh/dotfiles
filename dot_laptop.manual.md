@@ -10,6 +10,10 @@ rm -r User
 ln -s ~/Dropbox/Sublime/User
 ```
 
+View -> Hide Minimap
+
+Might need to install Package control first for all the other packages to sync.
+
 ## Moom
 To set up [Moom prefs](https://manytricks.com/osticket/kb/faq.php?id=53), run:
 ```shell
@@ -61,6 +65,15 @@ On other Macs:
 2. Launch Alfred's preferences to the Advanced tab and click on the "Set preferences folder…"
 3. Find the Dropbox folder in which your first Mac's Alfred.alfredpreferences file is located and click "Set folder and restart Alfred"
 4. Once Alfred has restarted, you'll be using your synced settings.
+
+## Safari
+- View -> Show status bar
+
+## Finder
+- View -> Use Stacks (control-command-O)
+
+## Mail
+- Set up Fastmail
 
 ## Other
 - Turn on FileVault
