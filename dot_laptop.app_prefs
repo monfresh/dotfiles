@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+# App preferences
+echo "Setting up app preferences"
+
+if [ ! defaults read com.manytricks.Moom | grep "Mouse" ]; then
+  echo "Setting up Moom"
+  open -a Moom
+  killall Moom
+  defaults import com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
+fi
+
+if [ ! defaults read net.shinyfrog.bear | grep "Theme" ]; then
+  echo "Setting up Bear"
+  open -a Bear
+  killall Bear
+  defaults import net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
+fi
+
+if [ ! -d "$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/" ]; then
+  echo "Setting up Sublime Text"
+  # https://packagecontrol.io/docs/syncing
+  open -a Sublime\ Text
+  killall Sublime\ Text
+  cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+  rm -r User
+  ln -s ~/Dropbox/Sublime/User
+fi

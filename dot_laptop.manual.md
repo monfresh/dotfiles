@@ -1,24 +1,15 @@
 ## Dropbox
 First, setup Dropbox, and wait for it to sync everything.
 
-## Sublime Text 3
-To [sync Sublime Text 3 settings](https://packagecontrol.io/docs/syncing) with Dropbox,
-open Sublime Text to populate Application Support, then run:
-```shell
-cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
-rm -r User
-ln -s ~/Dropbox/Sublime/User
+## Sync app prefs
+```
+sh .laptop.app_prefs
 ```
 
+## Sublime Text
 View -> Hide Minimap
 
 Might need to install Package control first for all the other packages to sync.
-
-## Moom
-To set up [Moom prefs](https://manytricks.com/osticket/kb/faq.php?id=53), run:
-```shell
-defaults import com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
-```
 
 ## Keyboard Maestro
 To [sync Keyboard Maestro macros](https://wiki.keyboardmaestro.com/Syncing_Macros_Between_Macs):

@@ -1,8 +1,20 @@
-# dotfiles
+# monfresh new mac setup
 
-These dotfiles are managed by [chezmoi](https://www.chezmoi.io/).
+This repo contains all the scripts I use to set up a new Mac, and to keep my dotfiles in sync across my computers. I use [chezmoi](https://www.chezmoi.io/) to manage the dotfiles. A step-by-step detailed guide will be coming soon on my [blog](https://www.moncefbelyamani.com). [Subscribe](https://moncefbelyamani.us2.list-manage.com/subscribe/post?u=fb7ab0f9baca19944778d96a7&id=10c076d42d) to be the first to know when it's released.
 
-To set up a new Mac:
+## Before setting up a new Mac
+### Export App preferences from existing main Mac
+- Quit Moom and Bear
+- Export [Moom prefs](https://manytricks.com/osticket/kb/faq.php?id=53):
+```shell
+defaults export com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
+```
+- Export Bear prefs:
+```shell
+defaults export net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
+```
+
+## Set up new Mac
 
 1. Sign in to iCloud and App Store
 
