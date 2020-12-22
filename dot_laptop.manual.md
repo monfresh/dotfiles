@@ -3,7 +3,7 @@ First, setup Dropbox, and wait for it to sync everything.
 
 ## Sync app prefs
 ```
-sh .laptop.app_prefs
+sh ~/.laptop.app_prefs
 ```
 
 ## Sublime Text
