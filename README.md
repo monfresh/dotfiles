@@ -4,9 +4,11 @@ These dotfiles are managed by [chezmoi](https://www.chezmoi.io/).
 
 To set up a new Mac:
 
+1. Sign in to iCloud and App Store
+
 1. Install all macOS updates.
 
-2. Sign into the Mac App Store, otherwise installing apps via [mas](https://github.com/mas-cli/mas) won’t work.
+2. Launch App Store and sign in, otherwise installing apps via [mas](https://github.com/mas-cli/mas) won’t work.
 
 3. Install 1Password and sign in.
 

@@ -16,13 +16,11 @@ brew 'yarn'
 
 # Install these on home machines only
 {{- if eq .location "home" }}
-cask 'beatport-pro'
 cask 'bookmacster'
 cask 'dupeguru'
 cask 'forklift'
 cask 'gemini'
 cask 'native-access'
-cask 'screenflow'
 # cask 'superduper'
 cask 'quicken'
 cask 'vlc'
@@ -37,6 +35,13 @@ cask 'audio-hijack'
 # cask 'spamsieve'
 # cask 'vox'
 # cask 'wiretap-studio'
+{{- end }}
+
+# Install these on iMac only
+{{- if eq .chezmoi.hostname "Moncefs-iMac.local" }}
+cask 'beatport-pro'
+cask 'farrago'
+cask 'screenflow'
 {{- end }}
 
 # Install these on work machines only
@@ -61,7 +66,6 @@ cask 'discord'
 cask 'docker'
 # cask 'do-not-disturb'
 cask 'dropbox'
-cask 'farrago'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
