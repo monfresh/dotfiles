@@ -69,9 +69,6 @@ On other Macs:
 ## Safari
 - View -> Show status bar
 
-## Finder
-- View -> Use Stacks (control-command-O)
-
 ## Mail
 - Set up Fastmail
 
