@@ -6,11 +6,11 @@ set -e
 echo "Setting up app preferences"
 
 moom_exists() {
-  defaults read com.manytricks.Moom | grep "Mouse"
+  defaults read com.manytricks.Moom | grep -q "Mouse"
 }
 
 bear_exists() {
-  defaults read net.shinyfrog.bear | grep "Theme"
+  defaults read net.shinyfrog.bear | grep -q "Theme"
 }
 
 if ! moom_exists; then
@@ -27,7 +27,7 @@ if ! bear_exists; then
   defaults import net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 fi
 
-if [ ! -d "$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages" ]; then
+if [ ! -d "~/Library/Application Support/Sublime Text 3/Packages" ]; then
   echo "Setting up Sublime Text"
   # https://packagecontrol.io/docs/syncing
   # open -a Sublime\ Text
