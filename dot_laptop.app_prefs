@@ -13,6 +13,10 @@ bear_exists() {
   defaults read net.shinyfrog.bear | grep -q "Theme"
 }
 
+sublime_exists() {
+  ls $HOME/Library/Application\ Support/Sublime\ Text\ 3/ | grep -q "Packages"
+}
+
 if ! moom_exists; then
   echo "Setting up Moom"
   open -a Moom
@@ -27,12 +31,12 @@ if ! bear_exists; then
   defaults import net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 fi
 
-if [ ! -d "~/Library/Application Support/Sublime Text 3/Packages" ]; then
+if ! sublime_exists; then
   echo "Setting up Sublime Text"
   # https://packagecontrol.io/docs/syncing
-  # open -a Sublime\ Text
-  # killall Sublime\ Text
-  # cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
-  # rm -r User
-  # ln -s ~/Dropbox/Sublime/User
+  open -a Sublime\ Text
+  killall Sublime\ Text
+  cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+  rm -r User
+  ln -s ~/Dropbox/Sublime/User
 fi
