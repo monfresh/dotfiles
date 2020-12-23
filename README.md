@@ -14,6 +14,11 @@ defaults export com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
 defaults export net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 ```
 
+### Deactivate licenses
+- Gemini 2
+- Screenflow
+- Tower
+
 ## Set up new Mac
 
 1. Sign in to iCloud and App Store

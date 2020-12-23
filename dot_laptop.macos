@@ -98,7 +98,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Use 24-hour clock
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm:ss"
 
-# Add additional search attirbutes to Finder
+# Add additional search attributes to Finder
 search_attributes=(
   kMDItemWhereFroms
   kMDItemDisplayName
@@ -127,5 +127,13 @@ echo "Allowing quicklook plugins ..."
 xattr -d -r com.apple.quarantine ~/Library/QuickLook
 echo "Restarting the finder ..."
 killall Finder
+
+echo "Setting up app preferences"
+echo "Setting Flux"
+defaults write org.herf.Flux locationTextField -string "22181"
+defaults write org.herf.Flux location -string "38.851600,-76.883900"
+defaults write org.herf.Flux locationType -string "L"
+defaults write org.herf.Flux disableFullscreen -int 1
+defaults write org.herf.Flux wakeTime -int 420
 
 echo "Done writing macOS defaults. Logout or restart to apply the changes."

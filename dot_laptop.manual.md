@@ -63,6 +63,16 @@ On other Macs:
 ## Mail
 - Set up Fastmail
 
+## Dash
+- Download Docsets. Look into automating this:
+- https://github.com/Kapeli/feeds
+- http://lucasg.github.io/2017/02/05/Downloading-Dash-docsets/
+- https://gist.github.com/lucasg/174e04125391f6e24b6f1070fc489a8d
+- Remember there's an Alfred integration
+
+## Slack
+- Sign in to workspaces. Is there a way to automate this?
+
 ## Other
 - Turn on FileVault
 - Set up the printer via system prefs. It should automatically find it in the network.
@@ -78,3 +88,7 @@ Grant full disk access to these apps:
 ### Screen Recording
 * Screenflow
 * Zoom
+
+### Duplicate Detective 2
+Email support. The download link in email confirmation doesn't work, and you can't download the app from their site without buying it again.
+https://fiplab.com/apps/duplicated-detective-2-for-mac
