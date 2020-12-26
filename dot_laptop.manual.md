@@ -57,6 +57,8 @@ On other Macs:
 3. Find the Dropbox folder in which your first Mac's Alfred.alfredpreferences file is located and click "Set folder and restart Alfred"
 4. Once Alfred has restarted, you'll be using your synced settings.
 
+Turn On Clipboard History. For some reason, this preference did not get remembered.
+
 ## Safari
 - View -> Show status bar
 
@@ -88,6 +90,12 @@ Grant full disk access to these apps:
 ### Screen Recording
 * Screenflow
 * Zoom
+
+### Accessibility
+* Alfred
+* Keyboard Maestro
+* Moom
+* PopClip
 
 ### Duplicate Detective 2
 Email support. The download link in email confirmation doesn't work, and you can't download the app from their site without buying it again.
