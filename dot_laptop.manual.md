@@ -64,6 +64,7 @@ Turn On Clipboard History. For some reason, this preference did not get remember
 
 ## Mail
 - Set up Fastmail
+- Add a new smart mailbox. This should trigger the sync of all other smart mailboxes.
 
 ## Dash
 - Download Docsets. Look into automating this:
@@ -100,3 +101,6 @@ Grant full disk access to these apps:
 ### Duplicate Detective 2
 Email support. The download link in email confirmation doesn't work, and you can't download the app from their site without buying it again.
 https://fiplab.com/apps/duplicated-detective-2-for-mac
+
+## Java
+If still using `s3_website`, download [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
