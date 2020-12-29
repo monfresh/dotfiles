@@ -25,6 +25,8 @@ To [add Algo profiles](https://github.com/trailofbits/algo#adding-or-removing-us
 5. On the [target Mac](https://github.com/trailofbits/algo#apple-devices), open WireGuard, click on it in the menu bar and open the
 profile via `Import tunnel from file`.
 
+If I'm replacing an old Mac with a new one, put the old Mac's `.conf` file in iCloud, then remove it from WireGuard on the old Mac, and set it up in the new Mac.
+
 ## Heroku
 To set up [Heroku auth](https://devcenter.heroku.com/articles/git#http-git-authentication), run `heroku login`.
 This will automatically create a token in `~/.netrc`
@@ -63,7 +65,7 @@ Turn On Clipboard History. For some reason, this preference did not get remember
 - View -> Show status bar
 
 ## Mail
-- Set up Fastmail
+- [Set up Fastmail](https://www.fastmail.com/settings/setup/guide/mac/mail?u=b894412f)
 - Add a new smart mailbox. This should trigger the sync of all other smart mailboxes.
 
 ## Dash
@@ -75,6 +77,9 @@ Turn On Clipboard History. For some reason, this preference did not get remember
 
 ## Slack
 - Sign in to workspaces. Is there a way to automate this?
+
+## Timing
+Sign in to web sync
 
 ## Other
 - Turn on FileVault
@@ -97,10 +102,18 @@ Grant full disk access to these apps:
 * Keyboard Maestro
 * Moom
 * PopClip
+* Timing
 
 ### Duplicate Detective 2
 Email support. The download link in email confirmation doesn't work, and you can't download the app from their site without buying it again.
 https://fiplab.com/apps/duplicated-detective-2-for-mac
 
-## Java
-If still using `s3_website`, download [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
+## Blog
+- If still using `s3_website`, download [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
+- Need to copy `s3_website.yml` from old Mac since it's gitignored.
+
+## Repos
+- Copy to iCloud any important gitignored files like `config/application.yml`
+
+## Backblaze
+If replacing an old Mac with a new one, [transfer the license](https://help.backblaze.com/hc/en-us/articles/217665668-Removing-a-Backup-From-an-Account-and-Reassigning-a-License).

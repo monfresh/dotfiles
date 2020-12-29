@@ -14,10 +14,12 @@ defaults export com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
 defaults export net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 ```
 
-### Deactivate licenses
+### Deactivate licenses/Sign out
+- Dropbox
 - Gemini 2
 - Screenflow
 - Tower
+- Apple TV, Music
 
 ## Set up new Mac
 
