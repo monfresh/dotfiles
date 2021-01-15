@@ -2,13 +2,6 @@
 
 set -e
 
-fancy_echo "Installing node 14.15.3 ..."
-if nodenv versions | grep 14.15.3; then
-  fancy_echo "node 14.15.3 already installed."
-else
-  nodenv install 14.15.3
-fi
-
 if command -v prettier >/dev/null; then
   fancy_echo "Prettier is already installed. Skipping ..."
 else
