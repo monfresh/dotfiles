@@ -44,8 +44,8 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Set View as List
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Use Stacks and Group by Kind
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy dateAdded" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:GroupBy Kind" ~/Library/Preferences/com.apple.finder.plist
+#/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy dateAdded" ~/Library/Preferences/com.apple.finder.plist
+#/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:GroupBy Kind" ~/Library/Preferences/com.apple.finder.plist
 defaults write com.apple.finder FXPreferredGroupBy -string "Kind"
 
 # Possible values for hot corners:
