@@ -17,12 +17,18 @@ if [ ! -d "$HOME/.local/share/omf" ]; then
   curl -L https://get.oh-my.fish | fish
 fi
 
-if [ ! -d "$HOME/projects/chruby-fish" ]; then
+if [ ! -d "$HOME/projects/monfresh/chruby-fish" ]; then
   # Set up chruby-fish using fork until this PR is merged:
   # https://github.com/JeanMertz/chruby-fish/pull/39
-  cd ~/projects
-  gh repo clone bouk/chruby-fish
+  cd ~/projects/monfresh
+  gh repo clone monfresh/chruby-fish
   cd chruby-fish
   git checkout -b rewrite-fish origin/rewrite-fish
-  make install
+  if apple_m1 && ! rosetta; then
+    echo "running on Apple M1 Native"
+    export PREFIX=/opt/homebrew
+    make install
+  else
+    make install
+  fi
 fi
