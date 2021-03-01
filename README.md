@@ -1,6 +1,6 @@
 # monfresh new mac setup
 
-This repo contains all the scripts I use to set up a new Mac, and to keep my dotfiles in sync across my computers. I use [chezmoi](https://www.chezmoi.io/) to manage the dotfiles. A step-by-step detailed guide will be coming soon on my [blog](https://www.moncefbelyamani.com). [Subscribe](https://moncefbelyamani.us2.list-manage.com/subscribe/post?u=fb7ab0f9baca19944778d96a7&id=10c076d42d) to be the first to know when it's released.
+This repo contains all the scripts I use to set up a new Mac, and to keep my dotfiles in sync across my computers. I use [chezmoi](https://www.chezmoi.io/) to manage the dotfiles. Read my [step-by-step detailed guide](https://www.moncefbelyamani.com/automating-the-setup-of-a-new-mac-with-all-your-apps-preferences-and-development-tools/).
 
 ## Before setting up a new Mac
 ### Export App preferences from existing main Mac
