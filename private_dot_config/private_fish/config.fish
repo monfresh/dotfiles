@@ -1,3 +1,5 @@
+status --is-interactive; and eval (/opt/homebrew/bin/brew shellenv)
+
 source ~/.fish_aliases
 
 source ~/.fish_variables
