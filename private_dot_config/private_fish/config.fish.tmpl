@@ -1,11 +1,16 @@
+{{- if eq .chezmoi.hostname "Moncefs-MacBook-Air.local" }}
 status --is-interactive; and eval (/opt/homebrew/bin/brew shellenv)
+{{- end }}
 
 source ~/.fish_aliases
 
 source ~/.fish_variables
 
-chruby ruby-2.7.2
+chruby ruby-2.7.4
 
 status --is-interactive; and source (nodenv init -|psub)
 
+{{- if eq .chezmoi.hostname "Moncefs-MacBook-Air.local" }}
 starship init fish | source
+{{- end }}
+
