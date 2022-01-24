@@ -6,9 +6,9 @@ source ~/.fish_aliases
 
 source ~/.fish_variables
 
-chruby ruby-2.7.4
-
 status --is-interactive; and source (nodenv init -|psub)
+
+chruby 3.0.3
 
 {{- if eq .chezmoi.hostname "Moncefs-MacBook-Air.local" }}
 starship init fish | source
