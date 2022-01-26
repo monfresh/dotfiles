@@ -38,6 +38,9 @@ alias ms='bundle exec middleman serve'
 abbr ma 'bundle exec middleman article'
 alias deploy='bundle exec middleman build && s3_website push'
 
+# rubyonmac
+alias zipprime='cd ~/projects/rubyonmac/rom && git pull && zip -r rubyonmac-prime.zip . -x '*.git*' -x .gitignore -x Brewfile.lock.json -x .DS_Store'
+
 ## GIT ##
 alias gitconfig='subl ~/.gitconfig'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
