@@ -25,7 +25,6 @@ alias fv='s ~/.fish_variables'
 alias fc='s ~/.config/fish/config.fish'
 alias fix='git diff --name-only | uniq | xargs subl'
 alias lap='cd ~/projects/monfresh/laptop'
-alias rom='cd ~/projects/rubyonmac/rom'
 alias pgup='brew remove --force postgresql && rm -rf /usr/local/var/postgres/ && brew install postgresql && brew services start postgresql'
 
 # jekyll
@@ -39,7 +38,9 @@ abbr ma 'bundle exec middleman article'
 alias deploy='bundle exec middleman build && s3_website push'
 
 # rubyonmac
-alias zipprime='cd ~/projects/rubyonmac/rom && git pull && zip -r rubyonmac-prime.zip . -x '*.git*' -x .gitignore -x Brewfile.lock.json -x .DS_Store'
+alias rom='cd ~/projects/rubyonmac/rom'
+alias zipprime='cd ~/projects/rubyonmac/rom && git pull && zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store'
+alias romprime='cd ~/Downloads/rubyonmac-prime && /usr/bin/env bash ~/Downloads/rubyonmac-prime/install'
 
 ## GIT ##
 alias gitconfig='subl ~/.gitconfig'
