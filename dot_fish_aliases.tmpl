@@ -18,7 +18,7 @@ alias bi='bundle install'
 alias bd='brew doctor'
 alias bu='brew update'
 alias lsa='ls -lah'
-alias fa='s ~/.fish_aliases'
+alias fa='subl /Users/moncef/.local/share/chezmoi/dot_fish_aliases.tmpl'
 alias fv='s ~/.fish_variables'
 alias fc='s ~/.config/fish/config.fish'
 alias fix='git diff --name-only | uniq | xargs subl'
@@ -47,6 +47,8 @@ alias zipbasic='cd ~/projects/rubyonmac/rom-basic && git pull && zip -r rubyonma
 alias zipplus='cd ~/projects/rubyonmac/rom-plus && git pull && zip -r rubyonmac-plus.zip . -x "*.git*" -x .gitignore -x .DS_Store -x troubleshooting.md -x prerequisites.md -x README.md -x docs.md -x post-installation-guides.md'
 
 alias romprime='cd ~/projects/rubyonmac/rom && git pull && bash rom'
+
+alias romup='cd ~/projects/rubyonmac/rom && git pull && cd ~/projects/rubyonmac/rom-plus && git pull && cd ~/projects/rubyonmac/rom-basic && git pull'
 
 ## GIT ##
 alias gitconfig='subl ~/.gitconfig'
