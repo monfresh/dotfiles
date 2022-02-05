@@ -32,3 +32,14 @@ if [ ! -d "$HOME/projects/monfresh/chruby-fish" ]; then
     make install
   fi
 fi
+
+if [ ! command -v chruby >/dev/null ]; then
+  cd ~/projects/monfresh/chruby-fish
+  if apple_m1 && ! rosetta; then
+    echo "running on Apple M1 Native"
+    export PREFIX=/opt/homebrew
+    make install
+  else
+    make install
+  fi
+fi

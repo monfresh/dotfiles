@@ -61,7 +61,7 @@ defaults write com.apple.finder FXPreferredGroupBy -string "Kind"
 # 12: Notification Center
 # 13: Lock Screen
 
-# Top-right hot corner to lock the screen
+# Bottom-left hot corner to lock the screen
 defaults write com.apple.dock wvous-bl-corner -int 13
 defaults write com.apple.dock wvous-bl-modifier -int 0
 # Require password immediately after sleep or screen saver begins

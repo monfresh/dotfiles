@@ -37,14 +37,6 @@ if [ ! -d "$HOME/projects/monfresh" ]; then
 fi
 cd ~/projects/monfresh
 
-if [ ! -d "$HOME/projects/monfresh/laptop" ]; then
-  gh repo clone monfresh/laptop
-fi
-
-if [ ! -d "$HOME/projects/monfresh/install-ruby-on-macos" ]; then
-  gh repo clone monfresh/install-ruby-on-macos
-fi
-
 if [ ! -d "$HOME/projects/monfresh/monfresh-dot-com" ]; then
   gh repo clone monfresh/monfresh-dot-com
 fi
@@ -57,9 +49,37 @@ if [ ! -d "$HOME/projects/monfresh/blog" ]; then
   gh repo clone monfresh/blog
 fi
 
-# mkdir ~/projects/smcgov
-# cd ~/projects/smcgov
-# gh repo clone smcgov/ohana-api-smc
-# gh repo clone smcgov/SMC-Connect
-# gh repo clone smcgov/ohana-sms-smc
+if [ ! -d "$HOME/projects/rubyonmac" ]; then
+  mkdir "$HOME/projects/rubyonmac"
+fi
+cd ~/projects/rubyonmac
+
+if [ ! -d "$HOME/projects/rubyonmac/rom" ]; then
+  gh repo clone rubyonmac/rom
+fi
+
+if [ ! -d "$HOME/projects/rubyonmac/rom-plus" ]; then
+  gh repo clone rubyonmac/rom-plus
+fi
+
+if [ ! -d "$HOME/projects/rubyonmac/rom-basic" ]; then
+  gh repo clone rubyonmac/rom-basic
+fi
+
+if [ ! -d "$HOME/projects/rubyonmac/rubyonmac-site" ]; then
+  gh repo clone rubyonmac/rubyonmac-site
+fi
+
+if [ ! -d "$HOME/projects/smcgov" ]; then
+  mkdir "$HOME/projects/smcgov"
+fi
+cd ~/projects/smcgov
+
+if [ ! -d "$HOME/projects/smcgov/ohana-api-smc" ]; then
+  gh repo clone smcgov/ohana-api-smc
+fi
+
+if [ ! -d "$HOME/projects/smcgov/SMC-Connect" ]; then
+  gh repo clone smcgov/SMC-Connect
+fi
 {{- end }}
