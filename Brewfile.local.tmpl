@@ -15,6 +15,8 @@ brew 'shellcheck'
 # brew 'svn' # for some cask fonts
 brew 'tldr'
 
+cask_args force: true
+
 # Install these on home machines only
 {{- if eq .location "home" }}
 cask 'bookmacster'
