@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -14,7 +14,7 @@ bear_exists() {
 }
 
 sublime_exists() {
-  ls $HOME/Library/Application\ Support/Sublime\ Text\ 3/ | grep -q "Packages"
+  ls "$HOME/Library/Application\ Support/Sublime\ Text\ 3/" | grep -q "Packages"
 }
 
 if ! moom_exists; then

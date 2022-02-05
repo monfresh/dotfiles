@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Add fish to /etc/shells and change to fish
 if ! grep -qs "fish" /etc/shells; then
@@ -20,9 +20,9 @@ fi
 if [ ! -d "$HOME/projects/monfresh/chruby-fish" ]; then
   # Set up chruby-fish using fork until this PR is merged:
   # https://github.com/JeanMertz/chruby-fish/pull/39
-  cd ~/projects/monfresh
+  cd ~/projects/monfresh || { echo "could not cd to ~/projects/monfresh"; exit 1; }
   gh repo clone monfresh/chruby-fish
-  cd chruby-fish
+  cd chruby-fish || { echo "could not cd to ~/projects/monfresh/chruby-fish"; exit 1; }
   git checkout -b rewrite-fish origin/rewrite-fish
   if apple_m1 && ! rosetta; then
     echo "running on Apple M1 Native"
@@ -34,11 +34,11 @@ if [ ! -d "$HOME/projects/monfresh/chruby-fish" ]; then
 fi
 
 command_exists () {
-  command -v $1 >/dev/null 2>&1;
+  command -v "$1" >/dev/null 2>&1;
 }
 
 if ! command_exists chruby; then
-  cd ~/projects/monfresh/chruby-fish
+  cd ~/projects/monfresh/chruby-fish || { echo "could not cd to ~/projects/monfresh/chruby-fish"; exit 1; }
   if apple_m1 && ! rosetta; then
     echo "running on Apple M1 Native"
     export PREFIX=/opt/homebrew
