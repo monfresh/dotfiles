@@ -3,8 +3,8 @@
 set -e
 
 if command -v prettier >/dev/null; then
-  fancy_echo "Prettier is already installed. Skipping ..."
+  success_echo "Prettier is already installed. Skipping ..."
 else
-  fancy_echo "Installing prettier globally ..."
+  info_echo "Installing prettier globally ..."
   yarn global add prettier
 fi
