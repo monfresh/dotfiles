@@ -40,10 +40,8 @@ curl --remote-name https://raw.githubusercontent.com/monfresh/dotfiles/master/do
 mv dot_laptop.local .laptop.local
 ```
 
-6. Run the laptop script:
-```shell
-bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
-```
+6. Run the [Ruby on Mac](https://www.rubyonmac.dev) Prime script.
+
 When prompted by chezmoi for email, enter the email you want to use for Git.
 When prompted for location, enter `home` or `work`, so that the appropriate apps
 and aliases are installed based on whether this is a home computer or work computer.
