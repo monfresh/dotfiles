@@ -18,6 +18,7 @@ brew 'tldr'
 # Install these on home machines only
 {{- if eq .location "home" }}
 cask 'bookmacster'
+cask 'calibre'
 cask 'dupeguru'
 cask 'forklift'
 cask 'gemini'
@@ -34,6 +35,7 @@ cask 'audio-hijack'
 # cask 'insomnia'
 # cask 'reflector'
 # cask 'spamsieve'
+cask 'telegram'
 # cask 'vox'
 # cask 'wiretap-studio'
 {{- end }}
@@ -43,6 +45,7 @@ cask 'audio-hijack'
 cask 'beatport-pro'
 cask 'farrago'
 cask 'screenflow'
+mas 'Vimeo - Video Management', id: 1356686763
 {{- end }}
 
 # Install these on work machines only
@@ -70,13 +73,18 @@ cask 'dropbox'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
+cask 'imageoptim'
 cask 'iterm2'
 # cask 'keybase'
 cask 'keyboard-maestro'
+cask 'kindle'
 cask 'knockknock'
 cask 'loopback'
 # cask 'lulu'
+cask 'marked'
+cask 'microsoft-edge'
 # cask 'notion'
+cask 'obsidian'
 # cask 'oversight'
 # cask 'postman'
 # cask 'reikey' # requires password?
@@ -94,18 +102,23 @@ cask 'visual-studio-code'
 cask 'zoom'
 
 # Fonts
-tap 'homebrew/cask-fonts'
-cask 'font-inconsolata'
+# tap 'homebrew/cask-fonts'
+# cask 'font-inconsolata'
 # cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-sauce-code-pro-nerd-font'
+# cask 'font-source-code-pro'
+# cask 'font-sauce-code-pro-nerd-font'
 
 mas '1Password', id: 1333542190
 mas 'Bear', id: 1091189122
 mas 'Better', id: 1121192229
 mas 'BreakTime', id: 427475982
+mas 'Dato', id: 1470584107
+mas 'Drafts', id: 1435957248
+mas 'DuckDuckGo Privacy Essentials', id: 1482920575
 mas 'Ghostery Lite', id: 1436953057
+# mas 'Kindle', id: 405399194
 mas 'Moom', id: 419330170
+mas 'Pins for Pinboard', id: 1547106997
 mas 'PopClip', id: 445189367
 mas 'Slack', id: 803453959
 mas 'TweetDeck', id: 485812721
@@ -115,6 +128,7 @@ mas 'TweetDeck', id: 485812721
 mas 'Duplicate Detective', id: 686428787
 mas 'Evernote', id: 406056744
 mas 'Mactracker', id: 430255202
+mas 'Pixelmator Pro', id: 1289583905
 mas 'TwistedWave', id: 408452636
 mas 'WhatsApp', id: 1147396723
 mas 'WireGuard', id: 1451685025
@@ -123,10 +137,11 @@ mas 'WireGuard', id: 1451685025
 ## Not in mas or App Store
 # Duplicate Detective 2
 # Korg M1
+# Descript
+
 
 ## To buy
 # Logic Pro X
-# Pixelmator Pro
 
 ## installed previously. worth another look?
 # Agenda
@@ -136,11 +151,9 @@ mas 'WireGuard', id: 1451685025
 # handbrake
 # induction
 # loopcloud
-# marked 2
 # micro snitch
 # popkey
 # soundflower
-# standard notes
 # stuffit expander
 # terminal-notifier
 # tidy up
