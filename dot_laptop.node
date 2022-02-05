@@ -6,6 +6,5 @@ if command -v prettier >/dev/null; then
   success_echo "Prettier is already installed. Skipping ..."
 else
   info_echo "Installing prettier globally ..."
-  nodenv shell 16.13.1
-  yarn global add prettier
+  NODENV_VERSION=16.13.1 yarn global add prettier
 fi
