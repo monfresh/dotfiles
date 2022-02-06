@@ -33,11 +33,8 @@ if [ ! -d "$HOME/projects/monfresh/chruby-fish" ]; then
   fi
 fi
 
-command_exists () {
-  command -v "$1" >/dev/null 2>&1;
-}
-
-if ! command_exists chruby; then
+if ! chruby; then
+  echo "chruby not found, running make install"
   cd ~/projects/monfresh/chruby-fish || { echo "could not cd to ~/projects/monfresh/chruby-fish"; exit 1; }
   if apple_m1 && ! rosetta; then
     echo "running on Apple M1 Native"
@@ -46,4 +43,6 @@ if ! command_exists chruby; then
   else
     make install
   fi
+else
+  echo "chruby found"
 fi
