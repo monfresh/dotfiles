@@ -1,10 +1,10 @@
 {{- if eq .location "home" }}
 # home only
-alias cdh='cd ~/projects/codeforamerica/ohana-web-search'
-alias cdoh='cd ~/projects/codeforamerica/ohana-api'
-alias blog='cd ~/projects/monfresh/blog'
-alias smco='cd ~/projects/smcgov/ohana-api-smc'
-alias smcw='cd ~/projects/smcgov/SMC-Connect'
+alias cdh='cd ~/projects/codeforamerica/ohana-web-search && git pull'
+alias cdoh='cd ~/projects/codeforamerica/ohana-api && git pull'
+alias blog='cd ~/projects/monfresh/blog && git pull'
+alias smco='cd ~/projects/smcgov/ohana-api-smc && git pull'
+alias smcw='cd ~/projects/smcgov/SMC-Connect && git pull'
 {{- end }}
 
 # common
