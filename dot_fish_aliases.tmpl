@@ -48,7 +48,9 @@ alias zipplus='cd ~/projects/rubyonmac/rom-plus && git pull && zip -r rubyonmac-
 
 alias zipgit='cd ~/projects/rubyonmac/gitconfig && zip -r rubyonmac-gitconfig.zip . -x ".git/*" -x .gitignore -x .DS_Store -x README.md -x docs.md'
 
-alias zipall='zipbasic && zipplus && zipprime && zipgit'
+alias ziprepos='cd ~/projects/rubyonmac/repos-addon && zip -r rubyonmac-repos.zip . -x ".git/*" -x .gitignore -x .DS_Store -x README.md -x docs.md'
+
+alias zipall='zipbasic && zipplus && zipprime && zipgit && ziprepos'
 
 alias romprime='cd ~/projects/rubyonmac/rom && git pull'
 alias rombasic='cd ~/projects/rubyonmac/rom-basic && git pull'
