@@ -1,10 +1,10 @@
 {{- if eq .location "home" }}
 # home only
-alias cdh='cd ~/projects/codeforamerica/ohana-web-search && git pull'
-alias cdoh='cd ~/projects/codeforamerica/ohana-api && git pull'
-alias blog='cd ~/projects/monfresh/blog && git pull && bundle && bundle exec middleman serve'
-alias smco='cd ~/projects/smcgov/ohana-api-smc && git pull'
-alias smcw='cd ~/projects/smcgov/SMC-Connect && git pull'
+alias cdh='cd ~/projects/codeforamerica/ohana-web-search && git pull && bundle'
+alias cdoh='cd ~/projects/codeforamerica/ohana-api && git pull && bundle'
+alias blog='cd ~/projects/monfresh/blog && bundle && git pull && bundle &&  bundle exec middleman serve'
+alias smco='cd ~/projects/smcgov/ohana-api-smc && git pull && bundle'
+alias smcw='cd ~/projects/smcgov/SMC-Connect && git pull && bundle'
 {{- end }}
 
 # common
@@ -38,7 +38,7 @@ alias deploy='bundle exec middleman build && s3_website push'
 # rubyonmac
 alias rom='cd ~ && /usr/bin/env bash ~/rom-prime 2>&1 | tee ~/rom-prime.log'
 
-alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && bin/bridgetown start'
+alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && bundle && bin/bridgetown start'
 
 alias zipprime='cd ~/projects/rubyonmac/rom && git pull && zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x publish'
 
