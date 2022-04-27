@@ -57,10 +57,15 @@ alias zipall='zipbasic && zipplus && zipprime && zipgit && ziprepos'
 alias romprime='cd ~/projects/rubyonmac/rom && git pull'
 alias rombasic='cd ~/projects/rubyonmac/rom-basic && git pull'
 alias romplus='cd ~/projects/rubyonmac/rom-plus && git pull'
-
-alias romup='cd ~/projects/rubyonmac/rom && git pull && cd ~/projects/rubyonmac/rom-plus && git pull && cd ~/projects/rubyonmac/rom-basic && git pull && cd ~/projects/rubyonmac/gitconfig && git pull && cd ~/projects/rubyonmac/repos && git pull && cd ~/projects/rubyonmac/macos-prefs && git pull && cd ~/projects/rubyonmac/rubyonmac-site && git pull && bundle'
-
 alias pprime='zipprime && romprime && bash publish'
+
+alias romup='rom_loop'
+
+function rom_loop
+  for dir in ~/projects/rubyonmac
+      cd $dir && git pull
+  end
+end
 
 ## GIT ##
 alias gitconfig='subl ~/.gitconfig'
