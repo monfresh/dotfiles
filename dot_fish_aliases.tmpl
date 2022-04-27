@@ -62,7 +62,7 @@ alias pprime='zipprime && romprime && bash publish'
 alias romup='rom_loop'
 
 function rom_loop
-  for dir in ~/projects/rubyonmac
+  for dir in ~/projects/rubyonmac/*/
       cd $dir && git pull
   end
 end
