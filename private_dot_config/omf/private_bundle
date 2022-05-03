@@ -1,6 +1,0 @@
-package bass
-package foreign-env
-package nvm
-package vcs
-theme default
-theme doughsay

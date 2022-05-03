@@ -8,7 +8,7 @@ source ~/.fish_variables
 
 status --is-interactive; and source (nodenv init -|psub)
 
-chruby 3.0.3
+chruby 3.1.2
 
 {{- if eq .chezmoi.hostname "Moncefs-MacBook-Air-2.local" }}
 starship init fish | source

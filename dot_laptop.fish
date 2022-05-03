@@ -12,11 +12,6 @@ if ! grep -qs "fish" /etc/shells; then
  fi
 fi
 
-if [ ! -d "$HOME/.local/share/omf" ]; then
-  fancy_echo "installing omf ..."
-  curl -L https://get.oh-my.fish | fish
-fi
-
 if [ ! -d "$HOME/projects/monfresh/chruby-fish" ]; then
   # Set up chruby-fish using fork until this PR is merged:
   # https://github.com/JeanMertz/chruby-fish/pull/39
