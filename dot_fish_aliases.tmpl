@@ -65,6 +65,7 @@ alias romup='rom_loop'
 
 function rom_loop
   for dir in ~/projects/rubyonmac/*/
+      echo "current dir is: $dir"
       cd $dir && git pull
   end
 end
