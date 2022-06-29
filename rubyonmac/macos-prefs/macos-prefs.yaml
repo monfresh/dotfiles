@@ -1,0 +1,76 @@
+dock:
+  autohide: true
+  # possible values for orientation: bottom, left, right
+  orientation: "bottom"
+  rearrange_spaces_in_mission_control: false
+
+# might require logging out and back in
+trackpad:
+  tap_to_click: true
+  tap_to_drag: true
+
+finder:
+  show_status_bar: true
+  show_path_bar: true
+  # possible values for new finder window: home, desktop, documents, icloud, recents
+  open_new_windows_in: "home"
+  warn_before_emptying_trash: true
+  # possible values for view style: list, icons, columns, gallery
+  preferred_view_style: "list"
+  # possible values for grouping stacks:
+  # kind
+  # date_last_opened
+  # date_added
+  # date_modified
+  # date_created
+  # tags
+  stacks_group_by: "kind"
+
+# Possible values for hot corners:
+#  0: no-op
+#  2: Mission Control (all windows)
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+# 14: Quick Note
+hot_corners:
+  bottom_left: 0
+  bottom_right: 0
+  top_left: 0
+  top_right: 0
+
+keyboard:
+  text:
+    correct_spelling_automatically: false
+    capitalize_words_automatically: false
+    add_period_with_double_space: false
+    use_smart_quotes: false
+    use_smart_dashes: false
+
+iterm:
+  prompt_on_quit: false
+
+# requires quitting and relaunching Safari if open while prefs are being set
+safari:
+  show_develop_menu: true
+  # possible values for search engine: duckduckgo, google, yahoo, bing, ecosia
+  default_search_engine: "duckduckgo"
+
+time_machine:
+  do_not_prompt_to_use_new_hard_drives_as_backup_volume: true
+
+date_and_time:
+  # EEE: 3-letter day of the week
+  # d MMM: day of the month and 3-letter month name
+  # H: for 24-hour clock
+  # h: for 12-hour clock
+  # mm: minutes
+  # ss: to display seconds
+  # a: to display AM/PM
+  format: "EEE d MMM  h:mm:ss a"
+  use_24_hour_clock: false
