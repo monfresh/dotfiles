@@ -14,7 +14,7 @@ finder:
   show_path_bar: true
   # possible values for new finder window: home, desktop, documents, icloud, recents
   open_new_windows_in: "home"
-  warn_before_emptying_trash: true
+  warn_before_emptying_trash: false
   # possible values for view style: list, icons, columns, gallery
   preferred_view_style: "list"
   # possible values for grouping stacks:
@@ -72,5 +72,5 @@ date_and_time:
   # mm: minutes
   # ss: to display seconds
   # a: to display AM/PM
-  format: "EEE d MMM  h:mm:ss a"
-  use_24_hour_clock: false
+  format: "EEE d MMM  H:mm:ss"
+  use_24_hour_clock: true
