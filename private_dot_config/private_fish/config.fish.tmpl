@@ -10,6 +10,8 @@ status --is-interactive; and source (nodenv init -|psub)
 
 chruby 3.1.2
 
+nodenv global 16.15.1
+
 {{- if eq .chezmoi.hostname "Moncefs-MacBook-Air-2.local" }}
 starship init fish | source
 {{- end }}
