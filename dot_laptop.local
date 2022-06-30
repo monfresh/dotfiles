@@ -13,15 +13,6 @@ fi
 
 info_echo "Running your customizations from ~/.laptop.local ..."
 
-if [ -f "$HOME/Brewfile.local" ]; then
-  info_echo "Installing tools and apps from Brewfile.local ..."
-  if brew bundle --file="$HOME/Brewfile.local"; then
-    success_echo "All items in Brewfile.local were installed successfully."
-  else
-    error_echo "Some items in Brewfile.local were not installed successfully."
-  fi
-fi
-
 if [ -f "$HOME/.laptop.node" ]; then
   # shellcheck source=/dev/null
   . "$HOME/.laptop.node"
@@ -30,11 +21,6 @@ fi
 if [ -f "$HOME/.laptop.repos" ]; then
   # shellcheck source=/dev/null
   . "$HOME/.laptop.repos"
-fi
-
-if [ -f "$HOME/.laptop.macos" ]; then
-  # shellcheck source=/dev/null
-  . "$HOME/.laptop.macos"
 fi
 
 if [ -f "$HOME/.laptop.fish" ]; then

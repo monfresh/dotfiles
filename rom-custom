@@ -1,0 +1,17 @@
+#!/bin/sh
+
+info_echo "Running your customizations from ~/rom-custom ..."
+
+if [ -f "$HOME/Brewfile-rom-custom" ]; then
+  if brew bundle --no-lock --file="$HOME/Brewfile-rom-custom"; then
+    success_echo "All items in Brewfile-rom-custom were installed successfully."
+  else
+    error_echo "Some items in Brewfile-rom-custom were not installed successfully."
+  fi
+fi
+
+if [ -f "$HOME/.laptop.local" ]; then
+  . "$HOME/.laptop.local"
+else
+  error_echo ".laptop.local not found!"
+fi

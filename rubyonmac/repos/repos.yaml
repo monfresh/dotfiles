@@ -1,0 +1,65 @@
+# For each repo you want to clone from GitHub, specify the path and the repo name.
+# Include both the GitHub username or org name and the repo name, separated by a slash.
+# For example:
+# - path: ~/code/monfresh
+#   name: monfresh/Keyboard-Maestro-Macros
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/gitconfig
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/macos-prefs-addon
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/paddle-webhook
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/repos-addon
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom-basic
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom-generator
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom-guide
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom-pro
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rubyonmac-issues
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rubyonmac-site
+
+- path: ~/projects/monfresh
+  name: monfresh/blog
+
+- path: ~/projects/monfresh
+  name: monfresh/monfresh-dot-com
+
+- path: ~/projects/monfresh
+  name: monfresh/ohana-sms
+
+- path: ~/projects/codeforamerica
+  name: codeforamerica/ohana-api
+
+- path: ~/projects/codeforamerica
+  name: codeforamerica/ohana-web-search
+
+- path: ~/projects/codeforamerica
+  name: codeforamerica/ohana-api-docs
+
+- path: ~/projects/codeforamerica
+  name: codeforamerica/ohanakapa-ruby
+
+- path: ~/projects/smcgov
+  name: smcgov/ohana-api-smc
+
+- path: ~/projects/smcgov
+  name: smcgov/SMC-Connect
