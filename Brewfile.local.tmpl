@@ -12,6 +12,7 @@ brew 'httpie'
 brew 'mas'
 brew 'redis'
 brew 'shellcheck'
+brew 'starship'
 # brew 'svn' # for some cask fonts
 brew 'tldr'
 
@@ -59,6 +60,8 @@ cask 'microsoft-teams'
 cask 'tableplus'
 {{- end }}
 
+tap 'homebrew/cask-versions'
+cask 'homebrew/cask-versions/1password-beta'
 cask 'alfred'
 # cask 'anki'
 # cask 'ankiapp-anki'
@@ -72,6 +75,7 @@ cask 'discord'
 cask 'docker'
 # cask 'do-not-disturb'
 cask 'dropbox'
+cask 'evernote'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
@@ -79,19 +83,25 @@ cask 'imageoptim'
 cask 'iterm2'
 # cask 'keybase'
 cask 'keyboard-maestro'
-# cask 'kindle'
-cask 'knockknock'
+cask 'kindle'
+# cask 'knockknock'
 cask 'loopback'
+cask 'mactracker'
+cask 'marked'
 # cask 'lulu'
 cask 'microsoft-edge'
+cask 'moom'
 # cask 'notion'
 cask 'obsidian'
 # cask 'oversight'
+cask 'popclip'
 # cask 'postman'
 # cask 'reikey' # requires password?
+cask 'slack'
 # cask 'skype'
 cask 'spotify'
 cask 'sublime-text'
+cask 'telegram'
 cask 'timing'
 cask 'tower'
 cask 'qlcolorcode'
@@ -100,6 +110,7 @@ cask 'qlmarkdown'
 cask 'qlstephen'
 cask 'quicklook-json'
 cask 'visual-studio-code'
+cask 'whatsapp'
 cask 'zoom'
 
 # Fonts
@@ -109,31 +120,35 @@ cask 'zoom'
 # cask 'font-source-code-pro'
 # cask 'font-sauce-code-pro-nerd-font'
 
-mas '1Password', id: 1333542190
+mas '1Blocker', id: 1365531024
+# mas '1Password', id: 1333542190
 mas 'Bear', id: 1091189122
-mas 'Better', id: 1121192229
 mas 'BreakTime', id: 427475982
 mas 'Dato', id: 1470584107
 mas 'Drafts', id: 1435957248
 mas 'DuckDuckGo Privacy Essentials', id: 1482920575
-mas 'Ghostery Lite', id: 1436953057
-mas 'Kindle', id: 405399194
-mas 'Marked 2', id: 890031187
-mas 'Moom', id: 419330170
+# mas 'Ghostery Lite', id: 1436953057
+# mas 'Kindle', id: 405399194
+# mas 'Marked 2', id: 890031187
+# mas 'Moom', id: 419330170
 mas 'Pins for Pinboard', id: 1547106997
-mas 'PopClip', id: 445189367
-mas 'Slack', id: 803453959
-mas 'Telegram', id: 747648890
+mas 'Poolsuite FM', id: 1514817810
+# mas 'PopClip', id: 445189367
+mas 'RetailMeNot Deal Finder', id: 1588381926
+# mas 'Slack', id: 803453959
+mas 'Step Two', id: 1448916662
+# mas 'Telegram', id: 747648890
 mas 'TweetDeck', id: 485812721
+mas 'Twitter', id: 1482454543
 
 # Install these on home machines only
 {{- if eq .location "home" }}
 mas 'Duplicate Detective', id: 686428787
-mas 'Evernote', id: 406056744
-mas 'Mactracker', id: 430255202
+# mas 'Evernote', id: 406056744
+# mas 'Mactracker', id: 430255202
 mas 'Pixelmator Pro', id: 1289583905
 mas 'TwistedWave', id: 408452636
-mas 'WhatsApp', id: 1147396723
+# mas 'WhatsApp', id: 1147396723
 mas 'WireGuard', id: 1451685025
 {{- end }}
 
@@ -141,7 +156,6 @@ mas 'WireGuard', id: 1451685025
 # Duplicate Detective 2
 # Korg M1
 # Descript
-
 
 ## To buy
 # Logic Pro X
