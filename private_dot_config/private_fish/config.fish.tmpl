@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.hostname "Moncefs-MacBook-Air-2.local" }}
+{{- if eq .chezmoi.hostname "Moncefs-M1-MacBook-Air.local" }}
 status --is-interactive; and eval (/opt/homebrew/bin/brew shellenv)
 {{- end }}
 
@@ -12,6 +12,6 @@ chruby 3.1.2
 
 nodenv global 16.15.1
 
-{{- if eq .chezmoi.hostname "Moncefs-MacBook-Air-2.local" }}
+{{- if eq .chezmoi.hostname "Moncefs-M1-MacBook-Air.local" }}
 starship init fish | source
 {{- end }}
