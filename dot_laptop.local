@@ -12,8 +12,6 @@ if [ ! -f "$HOME/.config/chezmoi/chezmoi.toml" ]; then
   chmod 0600 "$HOME/.config/chezmoi/chezmoi.toml"
 fi
 
-info_echo "Running your customizations from ~/.laptop.local ..."
-
 if [ -f "$HOME/.laptop.node" ]; then
   # shellcheck source=/dev/null
   . "$HOME/.laptop.node"

@@ -15,6 +15,7 @@ for brewfile in "${brewfiles[@]}"; do
 done
 
 if [ -f "$HOME/.laptop.local" ]; then
+  info_echo "Running your customizations from ~/.laptop.local ..."
   . "$HOME/.laptop.local"
 else
   error_echo ".laptop.local not found!"
