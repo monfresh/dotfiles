@@ -17,7 +17,7 @@ if [ -f "$HOME/.laptop.node" ]; then
   . "$HOME/.laptop.node"
 fi
 
-if [ -f "$HOME/.laptop.fish" ]; then
+if [ -f "$HOME/rubyonmac/fish/setup" ]; then
   # shellcheck source=/dev/null
-  . "$HOME/.laptop.fish"
+  . "$HOME/rubyonmac/fish/setup"
 fi
