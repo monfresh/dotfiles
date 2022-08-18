@@ -5,22 +5,22 @@
 #   name: monfresh/Keyboard-Maestro-Macros
 
 - path: ~/projects/rubyonmac
+  name: rubyonmac/add_collab
+
+- path: ~/projects/rubyonmac
   name: rubyonmac/gitconfig
 
 - path: ~/projects/rubyonmac
-  name: rubyonmac/macos-prefs-addon
-
-- path: ~/projects/rubyonmac
   name: rubyonmac/paddle-webhook
-
-- path: ~/projects/rubyonmac
-  name: rubyonmac/repos-addon
 
 - path: ~/projects/rubyonmac
   name: rubyonmac/rom
 
 - path: ~/projects/rubyonmac
   name: rubyonmac/rom-basic
+
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom-basic-script
 
 - path: ~/projects/rubyonmac
   name: rubyonmac/rom-generator
@@ -41,10 +41,19 @@
   name: monfresh/blog
 
 - path: ~/projects/monfresh
+  name: monfresh/Keyboard-Maestro-Macros
+
+- path: ~/projects/monfresh
   name: monfresh/monfresh-dot-com
 
 - path: ~/projects/monfresh
   name: monfresh/ohana-sms
+
+- path: ~/projects/monfresh
+  name: monfresh/they-make-music
+
+- path: ~/projects/monfresh
+  name: monfresh/try-feedparser
 
 - path: ~/projects/codeforamerica
   name: codeforamerica/ohana-api
