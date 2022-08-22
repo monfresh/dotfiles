@@ -40,7 +40,7 @@ curl --remote-name https://raw.githubusercontent.com/monfresh/dotfiles/master/do
 mv dot_laptop.local .laptop.local
 ```
 
-6. Run the [Ruby on Mac](https://www.rubyonmac.dev) Prime script.
+6. Run the [Ruby on Mac](https://www.rubyonmac.dev) Ultimate script.
 
 When prompted by chezmoi for email, enter the email you want to use for Git.
 When prompted for location, enter `home` or `work`, so that the appropriate apps
