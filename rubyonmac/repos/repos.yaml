@@ -8,9 +8,6 @@
   name: rubyonmac/add_collab
 
 - path: ~/projects/rubyonmac
-  name: rubyonmac/gitconfig
-
-- path: ~/projects/rubyonmac
   name: rubyonmac/paddle-webhook
 
 - path: ~/projects/rubyonmac
