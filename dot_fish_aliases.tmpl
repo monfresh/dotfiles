@@ -38,7 +38,7 @@ alias deploy='bundle exec middleman build && s3_website push'
 # rubyonmac
 alias rom='cd ~/rubyonmac && /usr/bin/env bash ~/rubyonmac/rom-ultimate 2>&1 | tee ~/rom-ultimate.log'
 
-alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && bundle && subl . && bin/bridgetown start'
+alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && chruby (cat .ruby-version) && bundle && subl . && bin/bridgetown start'
 
 alias zipprime='cd ~/projects/rubyonmac/rom && git pull && zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x "script/*" -x .version'
 
