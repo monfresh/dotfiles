@@ -41,7 +41,7 @@ alias rom='cd ~/rubyonmac && /usr/bin/env bash ~/rubyonmac/rom-ultimate 2>&1 | t
 
 alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && chruby (cat .ruby-version) && bundle && subl . && bin/bridgetown start'
 
-alias zipprime='cd ~/projects/rubyonmac/rom && git pull && zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x "script/*" -x .version'
+alias zipprime='cd ~/projects/rubyonmac/rom-prime && git pull && zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x "script/*" -x .version'
 
 alias zipult='cd ~/projects/rubyonmac/rom-ultimate && git pull && zip -r rubyonmac-ultimate.zip . -x ".git/*" -x .gitignore -x Brewfile.lock.json -x "*.DS_Store" -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x quickstart.md -x "script/*" -x .version'
 
@@ -57,7 +57,7 @@ alias ziprepos='cd ~/projects/rubyonmac/repos-addon && zip -r rubyonmac-repos.zi
 
 alias zipall='zipbasic && zipplus && zipprime && zipgit && ziprepos'
 
-alias romprime='cd ~/projects/rubyonmac/rom && git pull'
+alias romprime='cd ~/projects/rubyonmac/rom-prime && git pull'
 alias rombasic='cd ~/projects/rubyonmac/rom-basic && git pull'
 alias romplus='cd ~/projects/rubyonmac/rom-plus && git pull'
 alias romu='cd ~/projects/rubyonmac/rom-ultimate && git pull'
