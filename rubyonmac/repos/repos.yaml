@@ -38,6 +38,9 @@
   name: monfresh/blog
 
 - path: ~/projects/monfresh
+  name: monfresh/cfa-dashboard
+
+- path: ~/projects/monfresh
   name: monfresh/Keyboard-Maestro-Macros
 
 - path: ~/projects/monfresh
@@ -45,9 +48,6 @@
 
 - path: ~/projects/monfresh
   name: monfresh/ohana-sms
-
-- path: ~/projects/monfresh
-  name: monfresh/they-make-music
 
 - path: ~/projects/monfresh
   name: monfresh/try-feedparser
