@@ -37,8 +37,6 @@ abbr ma 'bundle exec middleman article'
 alias deploy='bundle exec middleman build && s3_website push'
 
 # rubyonmac
-alias rom='cd ~/rubyonmac && /usr/bin/env bash ~/rubyonmac/rom-ultimate 2>&1 | tee ~/rom-ultimate.log'
-
 alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && chruby (cat .ruby-version) && bundle && subl . && bin/bridgetown start'
 
 alias zipprime='cd ~/projects/rubyonmac/rom-prime && git pull && zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x "script/*" -x .version'
@@ -49,21 +47,16 @@ alias zipbasic='cd ~/projects/rubyonmac/rom-basic && git pull && zip -r rubyonma
 
 alias zipguide='cd ~/projects/rubyonmac/rom-guide && git pull && zip -r rubyonmac-guide.zip . -x "*.git*" -x .gitignore -x .DS_Store -x troubleshooting.md -x prerequisites.md -x README.md -x docs.md'
 
-alias zipplus='cd ~/projects/rubyonmac/rom-plus && git pull && zip -r rubyonmac-plus.zip . -x "*.git*" -x .gitignore -x .DS_Store -x troubleshooting.md -x prerequisites.md -x README.md -x docs.md -x post-installation-guides.md'
-
 alias zipgit='cd ~/projects/rubyonmac/gitconfig && zip -r rubyonmac-gitconfig.zip . -x ".git/*" -x .gitignore -x .DS_Store -x README.md -x docs.md'
 
 alias ziprepos='cd ~/projects/rubyonmac/repos-addon && zip -r rubyonmac-repos.zip . -x ".git/*" -x .gitignore -x .DS_Store -x README.md -x docs.md -x .ruby-version'
 
-alias zipall='zipbasic && zipplus && zipprime && zipgit && ziprepos'
+alias zipall='zipbasic && zipult && zipprime && zipgit && ziprepos'
 
 alias romprime='cd ~/projects/rubyonmac/rom-prime && git pull'
 alias rombasic='cd ~/projects/rubyonmac/rom-basic && git pull'
 alias romplus='cd ~/projects/rubyonmac/rom-plus && git pull'
 alias romu='cd ~/projects/rubyonmac/rom-ultimate && git pull'
-alias pprime='zipprime && script/publish'
-alias pbasic='zipbasic && script/publish'
-alias ppro='zippro && script/publish'
 
 alias romup='rom_loop'
 
