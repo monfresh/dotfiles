@@ -11,7 +11,7 @@
   name: rubyonmac/paddle-webhook
 
 - path: ~/projects/rubyonmac
-  name: rubyonmac/rom
+  name: rubyonmac/rom-prime
 
 - path: ~/projects/rubyonmac
   name: rubyonmac/rom-basic

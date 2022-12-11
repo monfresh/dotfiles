@@ -1,0 +1,22 @@
+#!/bin/sh
+
+info_echo "Running your customizations from ~/rubyonmac/rom-custom ..."
+
+brewfiles=( "$HOME/rubyonmac/Brewfile-rom-custom" "$HOME/Brewfile.local" "$HOME/Brewfile" )
+for brewfile in "${brewfiles[@]}"; do
+  if [ -f "$brewfile" ]; then
+    info_echo "Installing tools and apps from $brewfile ..."
+    if brew bundle --no-lock --file="$brewfile"; then
+      success_echo "All items in $brewfile were installed successfully."
+    else
+      error_echo "Some items in $brewfile were not installed successfully."
+    fi
+  fi
+done
+
+if [ -f "$HOME/.laptop.local" ]; then
+  info_echo "Running your customizations from ~/.laptop.local ..."
+  . "$HOME/.laptop.local"
+else
+  error_echo ".laptop.local not found!"
+fi
