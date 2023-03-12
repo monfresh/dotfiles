@@ -1,0 +1,7 @@
+user:
+  name: "Moncef Belyamani"
+  email: "moncef@example.com"
+
+# Possible values are: atom, bbedit, brackets, emacs, nano, sublime, textmate, vim, vscode
+# Let me know if your favorite editor is missing.
+editor: "sublime"
