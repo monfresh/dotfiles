@@ -67,7 +67,7 @@ function rom_loop
 end
 
 {{- if eq .chezmoi.hostname "Moncefs-iMac" }}
-alias plc='cd ~/projects/rubyonmac/license_checker && git pull && rm check_prime_license_i386 || echo 'file not found' && /usr/local/bin/rubyc prime_license_check.rb -o check_prime_license_i386 && git add check_prime_license_i386 && git commit -m "publish check_prime_license_i386" && git push origin main'
+alias plc='cd ~/projects/rubyonmac/license_checker && git pull && rm check_prime_license_i386 || echo "file not found" && /usr/local/bin/rubyc prime_license_check.rb -o check_prime_license_i386 && git add check_prime_license_i386 && git commit -m "publish check_prime_license_i386" && git push origin main'
 {{- end }}
 
 ## GIT ##
