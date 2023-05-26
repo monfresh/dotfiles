@@ -66,6 +66,10 @@ function rom_loop
   end
 end
 
+{{- if eq .chezmoi.hostname "Moncefs-iMac" }}
+alias plc='cd ~/projects/rubyonmac/license_checker && git pull && rm check_prime_license_i386 || echo 'file not found' && /usr/local/bin/rubyc prime_license_check.rb -o check_prime_license_i386 && git add check_prime_license_i386 && git commit -m "publish check_prime_license_i386" && git push origin main'
+{{- end }}
+
 ## GIT ##
 alias gitconfig='subl ~/.gitconfig'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
