@@ -25,6 +25,7 @@ alias fc='s ~/.config/fish/config.fish'
 alias fix='git diff --name-only | uniq | xargs subl'
 alias lap='cd ~/projects/monfresh/laptop'
 alias pgup='brew remove --force postgresql@14 && rm -rf (brew --prefix)/var/postgresql@14 && brew install postgresql@14 && brew services start postgresql@14'
+alias mysqlup='sudo rm -rf (brew --prefix)/var/mysql && sudo pkill mysqld && brew reinstall mysql && brew services start mysql'
 
 # jekyll
 alias jb='bundle exec jekyll build'
