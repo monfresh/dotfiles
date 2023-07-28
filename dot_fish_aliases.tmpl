@@ -24,8 +24,10 @@ alias fv='s ~/.fish_variables'
 alias fc='s ~/.config/fish/config.fish'
 alias fix='git diff --name-only | uniq | xargs subl'
 alias lap='cd ~/projects/monfresh/laptop'
-alias pgup='brew remove --force postgresql@14 && rm -rf (brew --prefix)/var/postgresql@14 && brew install postgresql@14 && brew services start postgresql@14'
+
 alias mysqlup='sudo rm -rf (brew --prefix)/var/mysql && sudo pkill mysqld && brew reinstall mysql && brew services start mysql'
+
+alias pgup='brew services stop postgresql@14 && killall postgres && brew remove --force postgresql@14 && rm -rf (brew --prefix)/var/postgresql@14 && rm ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist && rm ~/Library/LaunchAgents/homebrew.mxcl.postgresql@14.plist && brew install postgresql@14 && brew services restart postgresql@14'
 
 # jekyll
 alias jb='bundle exec jekyll build'
@@ -59,7 +61,7 @@ alias rombasic='cd ~/projects/rubyonmac/rom-basic && git pull'
 alias romu='cd ~/projects/rubyonmac/rom-ultimate && git pull'
 alias pw='cd ~/projects/rubyonmac/paddle-webhook && git pull && export RAILS_MASTER_KEY=(op item get "orders.rubyonmac.dev Rails master key" --fields label=notesPlain 2>&1)'
 
-alias romup='rom_loop'
+alias upromrepos='rom_loop'
 
 function rom_loop
   for dir in ~/projects/rubyonmac/*/
