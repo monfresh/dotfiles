@@ -23,7 +23,6 @@ alias bf='subl /Users/moncef/.local/share/chezmoi/Brewfile.local.tmpl'
 alias fv='s ~/.fish_variables'
 alias fc='s ~/.config/fish/config.fish'
 alias fix='git diff --name-only | uniq | xargs subl'
-alias lap='cd ~/projects/monfresh/laptop'
 
 alias mysqlup='sudo rm -rf (brew --prefix)/var/mysql && sudo pkill mysqld && brew reinstall mysql && brew services start mysql'
 
@@ -41,21 +40,6 @@ alias deploy='bundle exec middleman build && s3_website push'
 
 # rubyonmac
 alias romsite='cd ~/projects/rubyonmac/rubyonmac-site && git pull && chruby (cat .ruby-version) && bundle && subl . && bin/bridgetown start'
-
-alias zipprime='zip -r rubyonmac-prime.zip . -x "*.git*" -x .gitignore -x Brewfile.lock.json -x .DS_Store -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x "script/*" -x .version -x .ruby-version -x test.sh -x "*.png"'
-
-alias zipult='zip -r rubyonmac-ultimate.zip . -x ".git/*" -x .gitignore -x Brewfile.lock.json -x "*.DS_Store" -x troubleshooting.md -x post-installation-guides.md -x prerequisites.md -x README.md -x customizing.md -x docs.md -x quickstart.md -x "script/*" -x "tests/*" -x ".circleci/*" -x .version -x .rubocop.yml -x Gemfile -x Gemfile.lock -x .envrc -x "spec/*" -x brew_info.rb -x CHANGELOG.md -x test.sh -x rom-ultimate.x.c -x "*.png" -x test.rb -x .rspec -x "tmp/*" -x install_ruby_from_source.sh'
-
-alias zipbasic='cd ~/projects/rubyonmac/rom-basic && git pull && zip -r rubyonmac-basic.zip . -x "*.git*" -x .gitignore -x .DS_Store -x troubleshooting.md -x prerequisites.md -x README.md -x docs.md -x post-installation-guides.md -x "script/*"'
-
-alias zipguide='cd ~/projects/rubyonmac/rom-guide && git pull && zip -r rubyonmac-guide.zip . -x "*.git*" -x .gitignore -x .DS_Store -x troubleshooting.md -x prerequisites.md -x README.md -x docs.md'
-
-alias zipgit='cd ~/projects/rubyonmac/gitconfig && zip -r rubyonmac-gitconfig.zip . -x ".git/*" -x .gitignore -x .DS_Store -x README.md -x docs.md'
-
-alias ziprepos='cd ~/projects/rubyonmac/repos-addon && zip -r rubyonmac-repos.zip . -x ".git/*" -x .gitignore -x .DS_Store -x README.md -x docs.md -x .ruby-version'
-
-alias zipall='zipbasic && zipult && zipprime && zipgit && ziprepos'
-
 alias romprime='cd ~/projects/rubyonmac/rom-prime && git pull'
 alias rombasic='cd ~/projects/rubyonmac/rom-basic && git pull'
 alias romu='cd ~/projects/rubyonmac/rom-ultimate && git pull'
@@ -69,10 +53,6 @@ function rom_loop
       cd $dir && git pull
   end
 end
-
-{{- if eq .chezmoi.hostname "Moncefs-iMac" }}
-alias plc='cd ~/projects/rubyonmac/license_checker && chruby (cat .ruby-version) && git pull && rm check_prime_license_i386 || echo "file not found" && /usr/local/bin/rubyc prime_license_check.rb -o check_prime_license_i386 && git add check_prime_license_i386 && git commit -m "publish check_prime_license_i386" && git push origin main'
-{{- end }}
 
 ## GIT ##
 alias gitconfig='subl ~/.gitconfig'
