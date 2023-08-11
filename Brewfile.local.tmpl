@@ -1,4 +1,5 @@
 brew 'advancecomp'
+brew 'awscli'
 brew 'bat'
 brew 'chezmoi'
 brew 'difftastic'
@@ -12,12 +13,15 @@ brew 'httpie'
 # brew 'hugo'
 brew 'ical-buddy'
 brew 'jq'
+brew 'loc'
 brew 'mas'
+brew 'pandoc'
 brew 'pngquant'
 brew 'redis'
 brew 'shellcheck'
 brew 'scc'
 brew 'spotify-tui'
+brew "squashfs"
 brew 'starship'
 # brew 'svn' # for some cask fonts
 brew 'terminal-notifier'
@@ -98,27 +102,29 @@ cask 'karabiner-elements'
 # cask 'keybase'
 cask 'keyboard-maestro'
 cask 'kindle'
-# cask 'knockknock'
+cask 'knockknock'
 cask 'loopback'
+cask 'lulu'
 cask 'mactracker'
 cask 'marked'
-cask 'lulu'
 cask 'microsoft-edge'
+cask "netiquette"
 # cask 'moom'
 # cask 'notion'
 cask 'obsidian'
 # cask 'oversight'
-cask 'popclip'
+# cask 'popclip'
 # cask 'postman'
 # cask 'raycast'
 cask 'rocket'
-# cask 'reikey' # requires password?
+# reikey requires password?
+cask 'reikey'
 cask 'setapp'
 cask 'slack'
 # cask 'skype'
 cask 'spotify'
 cask 'sublime-text'
-cask 'telegram'
+# cask 'telegram'
 cask 'timing'
 cask 'tower'
 cask 'qlimagesize'
@@ -136,8 +142,9 @@ cask 'zoom'
 # cask 'font-sauce-code-pro-nerd-font'
 
 mas '1Blocker', id: 1365531024
-# mas '1Password', id: 1333542190
+mas "1Password for Safari", id: 1569813296
 mas 'Bear', id: 1091189122
+mas "BetterJSON", id: 1511935951
 mas 'BreakTime', id: 427475982
 mas 'Dato', id: 1470584107
 mas 'Drafts', id: 1435957248
@@ -149,15 +156,17 @@ mas 'Moom', id: 419330170
 mas 'Pins for Pinboard', id: 1547106997
 mas 'Poolsuite FM', id: 1514817810
 # mas 'PopClip', id: 445189367
-mas 'RetailMeNot Deal Finder', id: 1588381926
+# mas 'RetailMeNot Deal Finder', id: 1588381926
 # mas 'Slack', id: 803453959
-mas 'Step Two', id: 1448916662
+# mas 'Step Two', id: 1448916662
 # mas 'Telegram', id: 747648890
-mas 'TweetDeck', id: 485812721
+# mas 'TweetDeck', id: 485812721
 mas 'Twitter', id: 1482454543
+mas "World Clock", id: 956377119
 
 # Install these on home machines only
 {{- if eq .location "home" }}
+# mas "Developer", id: 640199958
 mas 'Duplicate Detective', id: 686428787
 # mas 'Evernote', id: 406056744
 # mas 'Mactracker', id: 430255202
