@@ -1,10 +1,14 @@
 #!/bin/bash
 
-set -e
+set -e -o pipefail
+
+latest_node_16() {
+  nodenv versions | grep -E -o '16\.\d+\.\d+' | tail -n1
+}
 
 if command -v prettier >/dev/null; then
   success_echo "Prettier is already installed. Skipping ..."
 else
   info_echo "Installing prettier globally ..."
-  NODENV_VERSION=16.15.1 yarn global add prettier
+  NODENV_VERSION="$latest_node_16" yarn global add prettier
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e -o pipefail
 
 info_echo "Installing or updating chezmoi ..."
 brew bundle --file=- <<EOF
@@ -16,8 +16,3 @@ fi
 #   # shellcheck source=/dev/null
 #   . "$HOME/.laptop.node"
 # fi
-
-if [ -f "$HOME/rubyonmac/fish/setup" ]; then
-  # shellcheck source=/dev/null
-  . "$HOME/rubyonmac/fish/setup"
-fi
