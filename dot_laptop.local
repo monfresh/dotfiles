@@ -12,10 +12,10 @@ if [ ! -f "$HOME/.config/chezmoi/chezmoi.toml" ]; then
   chmod 0600 "$HOME/.config/chezmoi/chezmoi.toml"
 fi
 
-if [ -f "$HOME/.laptop.node" ]; then
-  # shellcheck source=/dev/null
-  . "$HOME/.laptop.node"
-fi
+# if [ -f "$HOME/.laptop.node" ]; then
+#   # shellcheck source=/dev/null
+#   . "$HOME/.laptop.node"
+# fi
 
 if [ -f "$HOME/rubyonmac/fish/setup" ]; then
   # shellcheck source=/dev/null

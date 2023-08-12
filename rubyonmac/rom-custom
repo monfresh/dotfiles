@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+source ./functions/logging.sh
 
 info_echo "Running your customizations from ~/rubyonmac/rom-custom ..."
 
