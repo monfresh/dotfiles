@@ -1,4 +1,3 @@
-brew 'advancecomp'
 brew 'awscli'
 brew 'bat'
 brew 'chezmoi'
@@ -15,13 +14,9 @@ brew 'ical-buddy'
 brew 'jq'
 brew 'loc'
 brew 'mas'
-brew 'pandoc'
-brew 'pngquant'
 brew 'redis'
 brew 'shellcheck'
 brew 'scc'
-brew 'spotify-tui'
-brew "squashfs"
 brew 'starship'
 # brew 'svn' # for some cask fonts
 brew 'terminal-notifier'
@@ -32,9 +27,17 @@ cask_args force: true
 
 # Install these on home machines only
 {{- if eq .location "home" }}
+brew 'advancecomp'
+brew 'pandoc'
+brew 'pngquant'
+brew "shc"
+brew "squashfs"
+brew 'spotify-tui'
 cask 'bookmacster'
 # cask 'calibre'
+cask 'dropbox'
 cask 'dupeguru'
+cask 'evernote'
 cask 'forklift'
 cask 'gemini'
 cask 'native-access'
@@ -52,6 +55,7 @@ cask 'audio-hijack'
 # cask 'spamsieve'
 # cask 'telegram'
 # cask 'vox'
+cask 'whatsapp'
 # cask 'wiretap-studio'
 {{- end }}
 
@@ -89,8 +93,6 @@ cask 'cheatsheet'
 cask 'discord'
 # cask 'docker'
 # cask 'do-not-disturb'
-cask 'dropbox'
-cask 'evernote'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
@@ -128,7 +130,6 @@ cask 'qlimagesize'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'visual-studio-code'
-cask 'whatsapp'
 cask 'zoom'
 
 # Fonts
