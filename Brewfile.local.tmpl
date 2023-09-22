@@ -36,7 +36,7 @@ brew 'spotify-tui'
 cask 'bookmacster'
 # cask 'calibre'
 cask 'dropbox'
-cask 'dupeguru'
+# cask 'dupeguru' - Apple says it can't be trusted
 cask 'evernote'
 # cask 'forklift' - in setapp
 # cask 'gemini' - in setapp
@@ -61,6 +61,7 @@ cask 'whatsapp'
 
 # Install these on iMac only
 {{- if eq .chezmoi.hostname "Moncefs-iMac" }}
+cask 'backblaze'
 cask 'beatport-pro'
 cask 'farrago'
 cask 'qlcolorcode'
@@ -83,7 +84,7 @@ cask 'alfred'
 # cask 'anki'
 # cask 'ankiapp-anki'
 cask 'appzapper'
-cask 'backblaze'
+
 # cask 'bartender' - in setapp
 # cask 'brave-browser'
 cask 'bunch'
