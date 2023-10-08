@@ -1,13 +1,30 @@
 {{- if eq .chezmoi.hostname "Moncefs-M1-MacBook-Air" }}
-status --is-interactive; and eval (/opt/homebrew/bin/brew shellenv)
+# Added by Ruby on Mac to make it easier to switch between native mode and Rosetta
+if test (arch) = "i386"
+  set HOMEBREW_PREFIX /usr/local
+  set_color red; echo "Your terminal is using Rosetta!"
+  set_color normal;
+else
+  set HOMEBREW_PREFIX /opt/homebrew
+end
+
+status --is-interactive; and eval ($HOMEBREW_PREFIX/bin/brew shellenv)
+# End of lines added by Ruby on Mac
+{{- end }}
+
+{{- if eq .chezmoi.hostname "Moncefs-iMac" }}
+status --is-interactive; and eval (/usr/local/bin/brew shellenv)
 {{- end }}
 
 source ~/.fish_aliases
-
 source ~/.fish_variables
 
-{{- if eq .chezmoi.hostname "Moncefs-M1-MacBook-Air" }}
 starship init fish | source
-{{- end }}
 
-export RUBYONMAC_UPDATE_PATH="$HOME/projects/rubyonmac/rom-ultimate"
+status --is-interactive; and source (nodenv init -|psub)
+
+fish_add_path --path /Users/moncef/rubyonmac
+
+nodenv global 18.18.0
+
+chruby ruby-3.2.2
