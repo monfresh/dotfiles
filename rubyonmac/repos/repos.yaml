@@ -55,6 +55,9 @@
 - path: ~/projects/monfresh
   name: monfresh/try-feedparser
 
+- path: ~/projects/monfresh
+  name: monfresh/ruby-packer
+
 - path: ~/projects/codeforamerica
   name: codeforamerica/ohana-api
 
