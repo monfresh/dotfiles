@@ -37,6 +37,9 @@
 - path: ~/projects/rubyonmac
   name: rubyonmac/rom-cli
 
+- path: ~/projects/rubyonmac
+  name: rubyonmac/rom-cli-trial
+
 - path: ~/projects/monfresh
   name: monfresh/blog
 
