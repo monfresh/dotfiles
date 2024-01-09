@@ -1,15 +1,9 @@
 {{- $email := promptString "email" -}}
 {{- $location := promptString "location" -}}
-{{- $github_token := promptString "github_token" -}}
-{{- $heroku_token := promptString "heroku_token" -}}
-{{- $heroku_email := promptString "heroku_email" -}}
 {{- $aws_access := promptString "aws_access" -}}
 {{- $aws_secret := promptString "aws_secret" -}}
 [data]
     email = "{{ $email }}"
     location = "{{ $location }}"
-    github_token = "{{ $github_token }}"
-    heroku_token = "{{ $heroku_token }}"
-    heroku_email = "{{ $heroku_email }}"
     aws_access = "{{ $aws_access }}"
     aws_secret = "{{ $aws_secret }}"

@@ -4,14 +4,10 @@ This repo contains all the scripts I use to set up a new Mac, and to keep my dot
 
 ## Before setting up a new Mac
 ### Export App preferences from existing main Mac
-- Quit Moom and Bear
+- Quit Moom
 - Export [Moom prefs](https://manytricks.com/osticket/kb/faq.php?id=53):
 ```shell
 defaults export com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
-```
-- Export Bear prefs:
-```shell
-defaults export net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 ```
 
 ### Deactivate licenses/Sign out
@@ -33,18 +29,10 @@ defaults export net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 
 4. Quit Terminal (if it's running), and give it full disk access in System Preferences -> Security & Privacy -> Privacy tab -> Full Disk Access
 
-5. Download `.laptop.local`:
-```shell
-cd ~
-curl --remote-name https://raw.githubusercontent.com/monfresh/dotfiles/master/dot_laptop.local
-mv dot_laptop.local .laptop.local
-```
-
 6. Run the [Ruby on Mac](https://www.rubyonmac.dev) Ultimate script.
 
 When prompted by chezmoi for email, enter the email you want to use for Git.
-When prompted for location, enter `home` or `work`, so that the appropriate apps
-and aliases are installed based on whether this is a home computer or work computer.
+When prompted for location, enter `home` or `work`, so that the appropriate apps, tools, repos, and aliases are installed based on whether this is a home computer or work computer.
 See [Brewfile.local.tmpl](https://github.com/monfresh/dotfiles/blob/master/Brewfile.local.tmpl) for an example.
 When prompted for the various tokens, get them from 1Password and paste them in.
 
