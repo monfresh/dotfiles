@@ -17,6 +17,9 @@ defaults export com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
 - Tower
 - Apple TV, Music
 
+### Repos
+- Copy to iCloud any important gitignored files like `config/application.yml`
+
 ## Set up new Mac
 
 1. Sign in to iCloud and App Store

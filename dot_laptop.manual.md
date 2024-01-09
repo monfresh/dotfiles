@@ -110,10 +110,6 @@ https://fiplab.com/apps/duplicated-detective-2-for-mac
 
 ## Blog
 - If still using `s3_website`, download [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
-- Need to copy `s3_website.yml` from old Mac since it's gitignored.
-
-## Repos
-- Copy to iCloud any important gitignored files like `config/application.yml`
 
 ## Backblaze
 If replacing an old Mac with a new one, [transfer the license](https://help.backblaze.com/hc/en-us/articles/217665668-Removing-a-Backup-From-an-Account-and-Reassigning-a-License).

@@ -4,6 +4,8 @@
 # - path: ~/code/monfresh
 #   name: monfresh/Keyboard-Maestro-Macros
 
+# Install these on home machines only
+{{- if eq .location "home" }}
 - path: ~/projects/rubyonmac
   name: rubyonmac/paddle-webhook
 
@@ -66,3 +68,10 @@
 
 - path: ~/projects/smcgov
   name: smcgov/SMC-Connect
+{{- end }}
+
+# Install these on work machines only
+{{- if eq .location "work" }}
+- path: ~/projects/18F
+  name: 18F/identity-idp
+{{- end }}
