@@ -59,7 +59,7 @@ On other Macs:
 3. Find the Dropbox folder in which your first Mac's Alfred.alfredpreferences file is located and click "Set folder and restart Alfred"
 4. Once Alfred has restarted, you'll be using your synced settings.
 
-Turn On Clipboard History. For some reason, this preference did not get remembered.
+Turn On Clipboard History. This preference doesn't get shared between Macs.
 
 ## Mail
 - [Set up Fastmail](https://www.fastmail.com/settings/setup/guide/mac/mail?u=b894412f)
