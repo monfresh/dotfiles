@@ -58,6 +58,7 @@ iterm:
 # requires quitting and relaunching Safari if open while prefs are being set
 safari:
   show_develop_menu: true
+  show_status_bar: true
   # possible values for search engine: duckduckgo, google, yahoo, bing, ecosia
   default_search_engine: "duckduckgo"
 

@@ -61,9 +61,6 @@ On other Macs:
 
 Turn On Clipboard History. For some reason, this preference did not get remembered.
 
-## Safari
-- View -> Show status bar
-
 ## Mail
 - [Set up Fastmail](https://www.fastmail.com/settings/setup/guide/mac/mail?u=b894412f)
 - Add a new smart mailbox. This should trigger the sync of all other smart mailboxes.
