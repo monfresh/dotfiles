@@ -28,6 +28,8 @@ alias mysqlup='sudo rm -rf (brew --prefix)/var/mysql && sudo pkill mysqld && bre
 
 alias pgup='brew services stop postgresql@14 && killall postgres && brew remove --force postgresql@14 && rm -rf (brew --prefix)/var/postgresql@14 && rm ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist && rm ~/Library/LaunchAgents/homebrew.mxcl.postgresql@14.plist && brew install postgresql@14 && brew services restart postgresql@14'
 
+alias qlmd='xattr -r -d com.apple.quarantine /Applications/QLMarkdown.app && open /Applications/QLMarkdown.app && killall QLMarkdown'
+
 # jekyll
 alias jb='bundle exec jekyll build'
 alias js='bundle exec jekyll serve'

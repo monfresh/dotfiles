@@ -9,10 +9,6 @@ moom_exists() {
   defaults read com.manytricks.Moom | grep -q "Mouse"
 }
 
-bear_exists() {
-  defaults read net.shinyfrog.bear | grep -q "Theme"
-}
-
 sublime_exists() {
   ls "$HOME/Library/Application\ Support/Sublime\ Text\ 3/" | grep -q "Packages"
 }
@@ -22,13 +18,6 @@ if ! moom_exists; then
   open -a Moom
   killall Moom
   defaults import com.manytricks.Moom ~/Dropbox/Moom/Moom.plist
-fi
-
-if ! bear_exists; then
-  echo "Setting up Bear"
-  open -a Bear
-  killall Bear
-  defaults import net.shinyfrog.bear ~/Dropbox/Bear/Bear.plist
 fi
 
 if ! sublime_exists; then

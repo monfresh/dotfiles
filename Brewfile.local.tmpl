@@ -5,6 +5,7 @@ brew 'difftastic'
 brew 'direnv'
 brew 'eza'
 brew 'exercism'
+brew 'fd'
 brew 'fish'
 brew 'grc'
 # brew 'highlight'
@@ -19,9 +20,11 @@ brew 'shellcheck'
 brew 'scc'
 brew 'starship'
 # brew 'svn' # for some cask fonts
+brew 't-rec'
 brew 'terminal-notifier'
 brew 'tldr'
 # brew 'vips'
+brew 'watchexec'
 
 cask_args force: true
 
@@ -37,6 +40,7 @@ cask 'bookmacster'
 # cask 'calibre'
 cask 'dropbox'
 # cask 'dupeguru' - Apple says it can't be trusted
+# cask 'ecamm-live'
 cask 'evernote'
 # cask 'forklift' - in setapp
 # cask 'gemini' - in setapp
@@ -73,9 +77,14 @@ mas 'Vimeo - Video Management', id: 1356686763
 
 # Install these on work machines only
 {{- if eq .location "work" }}
+# brew 'chamber'
+# brew 'pre-commit'
+# brew 'terraform'
+# cask 'aws-vault'
 cask 'docker'
 cask 'keka'
 cask 'microsoft-teams'
+# cask 'opensc'
 cask 'tableplus'
 {{- end }}
 
@@ -86,7 +95,6 @@ cask 'alfred'
 # cask 'anki'
 # cask 'ankiapp-anki'
 cask 'appzapper'
-
 # cask 'bartender' - in setapp
 # cask 'brave-browser'
 cask 'bunch'
@@ -95,6 +103,7 @@ cask 'cheatsheet'
 # cask 'dash' - in setapp
 cask 'discord'
 # cask 'do-not-disturb'
+cask 'espanso'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
@@ -103,6 +112,7 @@ cask 'iterm2'
 cask 'karabiner-elements'
 # cask 'keybase'
 cask 'keyboard-maestro'
+cask 'kitty'
 cask 'knockknock'
 cask 'loopback'
 cask 'loom'
@@ -128,7 +138,7 @@ cask 'suspicious-package'
 # cask 'timing' - in setapp
 cask 'tower'
 cask 'qlimagesize'
-cask 'qlmarkdown'
+cask 'qlmarkdown' # I think this might be built into Sonoma
 cask 'quicklook-json'
 cask 'visual-studio-code'
 cask 'zoom'
