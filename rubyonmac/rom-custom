@@ -18,5 +18,10 @@ done
 
 info_echo "Copying ruby packer binaries ..."
 
-cp "$HOME/Documents/Business/Ruby\ on\ Mac/ruby_packer/arm64/rubyc" "/opt/homebrew/bin/rubyc"
-cp "$HOME/Documents/Business/Ruby\ on\ Mac/ruby_packer/i386/rubyc" "/usr/local/bin/rubyc"
+if [ -f "$HOME/Documents/Business/Ruby\ on\ Mac/ruby_packer/arm64/rubyc" ]; then
+  cp "$HOME/Documents/Business/Ruby\ on\ Mac/ruby_packer/arm64/rubyc" "/opt/homebrew/bin/rubyc"
+fi
+
+if [ -f "$HOME/Documents/Business/Ruby\ on\ Mac/ruby_packer/i386/rubyc" ]; then
+  cp "$HOME/Documents/Business/Ruby\ on\ Mac/ruby_packer/i386/rubyc" "/usr/local/bin/rubyc"
+fi
