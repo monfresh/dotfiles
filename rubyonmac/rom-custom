@@ -16,14 +16,14 @@ for brewfile in "${brewfiles[@]}"; do
   fi
 done
 
-info_echo "Copying ruby packer binaries ..."
-
-if [ -f "$HOME/Documents/Business/Ruby on Mac/ruby_packer/arm64/rubyc" ]; then
+if [ -f "$HOME/Documents/Business/Ruby on Mac/ruby_packer/arm64/rubyc" ] && [ ! -f "/opt/homebrew/bin/rubyc" ]; then
+  info_echo "Copying arm64 ruby packer binary ..."
   cp "$HOME/Documents/Business/Ruby on Mac/ruby_packer/arm64/rubyc" "/opt/homebrew/bin/rubyc"
   chmod 755 /opt/homebrew/bin/rubyc
 fi
 
-if [ -f "$HOME/Documents/Business/Ruby on Mac/ruby_packer/i386/rubyc" ]; then
+if [ -f "$HOME/Documents/Business/Ruby on Mac/ruby_packer/i386/rubyc" ] && [ ! -f "/usr/local/bin/rubyc" ]; then
+  info_echo "Copying i386 ruby packer binary ..."
   cp "$HOME/Documents/Business/Ruby on Mac/ruby_packer/i386/rubyc" "/usr/local/bin/rubyc"
   chmod 755 /usr/local/bin/rubyc
 fi
