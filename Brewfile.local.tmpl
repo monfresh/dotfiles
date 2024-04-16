@@ -14,7 +14,6 @@ brew 'httpie'
 brew 'ical-buddy'
 brew 'jq'
 brew 'loc'
-brew 'mas'
 brew 'redis'
 brew 'shellcheck'
 brew 'scc'
@@ -31,23 +30,37 @@ cask_args force: true
 # Install these on home machines only
 {{- if eq .location "home" }}
 brew 'advancecomp'
+brew 'mas'
 brew 'pandoc'
 brew 'pngquant'
 brew "shc"
 brew "squashfs"
 # brew 'spotify_player'
+tap 'homebrew/cask-versions'
+cask 'homebrew/cask-versions/1password-beta'
+cask '1password-cli'
 cask 'bookmacster'
 # cask 'calibre'
+cask 'cheatsheet'
+cask 'discord'
 cask 'dropbox'
 # cask 'dupeguru' - Apple says it can't be trusted
 # cask 'ecamm-live'
 cask 'evernote'
 # cask 'forklift' - in setapp
+cask 'flux'
+cask 'google-chrome'
 # cask 'gemini' - in setapp
+cask 'karabiner-elements'
+cask 'mactracker'
+cask 'microsoft-edge'
 cask 'native-access'
 # cask 'superduper'
 cask 'quicken'
+cask 'slack'
+cask 'visual-studio-code'
 cask 'vlc'
+cask 'zoom'
 # cask 'airfoil'
 cask 'audio-hijack'
 # cask 'beardedspice'
@@ -82,15 +95,12 @@ mas 'Vimeo - Video Management', id: 1356686763
 # brew 'terraform'
 # cask 'aws-vault'
 cask 'docker'
-cask 'keka'
-cask 'microsoft-teams'
+# cask 'keka'
+# cask 'microsoft-teams'
 # cask 'opensc'
 cask 'tableplus'
 {{- end }}
 
-tap 'homebrew/cask-versions'
-cask 'homebrew/cask-versions/1password-beta'
-cask '1password-cli'
 cask 'alfred'
 # cask 'anki'
 # cask 'ankiapp-anki'
@@ -99,17 +109,13 @@ cask 'appzapper'
 # cask 'brave-browser'
 cask 'bunch'
 # cask 'caret'
-cask 'cheatsheet'
 # cask 'dash' - in setapp
-cask 'discord'
 # cask 'do-not-disturb'
+cask "duckduckgo"
 cask 'espanso'
 cask 'firefox'
-cask 'flux'
-cask 'google-chrome'
 cask 'imageoptim'
 cask 'iterm2'
-cask 'karabiner-elements'
 # cask 'keybase'
 cask 'keyboard-maestro'
 cask 'kitty'
@@ -117,8 +123,6 @@ cask 'knockknock'
 cask 'loopback'
 cask 'loom'
 cask 'lulu'
-cask 'mactracker'
-cask 'microsoft-edge'
 cask "netiquette"
 # cask 'moom'
 # cask 'notion'
@@ -131,17 +135,14 @@ cask 'rocket'
 # reikey requires password?
 cask 'reikey'
 cask 'setapp'
-cask 'slack'
 # cask 'skype'
 cask 'sublime-text'
 cask 'suspicious-package'
 # cask 'timing' - in setapp
 cask 'tower'
 cask 'qlimagesize'
-cask 'qlmarkdown' # I think this might be built into Sonoma
+# cask 'qlmarkdown' # Looks like this feature is now built into Sonoma!
 cask 'quicklook-json'
-cask 'visual-studio-code'
-cask 'zoom'
 
 # Fonts
 # tap 'homebrew/cask-fonts'
@@ -150,36 +151,36 @@ cask 'zoom'
 # cask 'font-source-code-pro'
 # cask 'font-sauce-code-pro-nerd-font'
 
-mas '1Blocker', id: 1365531024
-mas "1Password for Safari", id: 1569813296
-mas "BetterJSON", id: 1511935951
-mas 'BreakTime', id: 427475982
-mas 'Dato', id: 1470584107 # also available on Setapp
-mas 'Drafts', id: 1435957248
-mas 'DuckDuckGo Privacy Essentials', id: 1482920575
 # mas 'Ghostery Lite', id: 1436953057
-mas 'Kindle', id: 302584613
-mas 'Marked 2', id: 890031187 # in setapp
-mas 'Moom', id: 419330170
-mas 'Pins for Pinboard', id: 1547106997
 # mas 'PopClip', id: 445189367
 # mas 'RetailMeNot Deal Finder', id: 1588381926
 # mas 'Slack', id: 803453959
 # mas 'Step Two', id: 1448916662 # also available on Setapp
 # mas 'Telegram', id: 747648890
-mas 'Twitter', id: 1482454543
-mas "World Clock", id: 956377119
 
 # Install these on home machines only
 {{- if eq .location "home" }}
+mas '1Blocker', id: 1365531024
+mas "1Password for Safari", id: 1569813296
+mas "BetterJSON", id: 1511935951
+mas 'BreakTime', id: 427475982
 # mas "Developer", id: 640199958
+mas 'Dato', id: 1470584107 # also available on Setapp
+mas 'Drafts', id: 1435957248
+mas 'DuckDuckGo Privacy Essentials', id: 1482920575
 mas 'Duplicate Detective', id: 686428787
 # mas 'Evernote', id: 406056744
+mas 'Kindle', id: 302584613
 # mas 'Mactracker', id: 430255202
+mas 'Marked 2', id: 890031187 # in setapp
+mas 'Moom', id: 419330170
 mas 'Pixelmator Pro', id: 1289583905
+mas 'Pins for Pinboard', id: 1547106997
 mas 'Poolsuite FM', id: 1514817810
 # mas 'Stellar for Reddit', id: 1566795636
 mas 'TwistedWave', id: 408452636
+mas 'Twitter', id: 1482454543
+mas "World Clock", id: 956377119
 # mas 'WhatsApp', id: 1147396723
 mas 'WireGuard', id: 1451685025
 {{- end }}
