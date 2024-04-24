@@ -3,6 +3,8 @@ brew 'bat'
 brew 'chezmoi'
 brew 'difftastic'
 brew 'direnv'
+tap 'espanso/espanso'
+brew 'espanso'
 brew 'eza'
 brew 'exercism'
 brew 'fd'
@@ -24,6 +26,10 @@ brew 'terminal-notifier'
 brew 'tldr'
 # brew 'vips'
 brew 'watchexec'
+
+cask 'github'
+cask 'iterm2'
+cask 'sublime-text'
 
 cask_args force: true
 
@@ -75,31 +81,6 @@ cask 'spotify'
 # cask 'vox'
 cask 'whatsapp'
 # cask 'wiretap-studio'
-{{- end }}
-
-# Install these on iMac only
-{{- if eq .chezmoi.hostname "Moncefs-iMac" }}
-cask 'backblaze'
-cask 'beatport-pro'
-cask 'farrago'
-cask 'qlcolorcode'
-cask 'qlstephen'
-cask 'screenflow'
-mas 'Vimeo - Video Management', id: 1356686763
-{{- end }}
-
-# Install these on work machines only
-{{- if eq .location "work" }}
-# brew 'chamber'
-# brew 'pre-commit'
-# brew 'terraform'
-# cask 'aws-vault'
-cask 'docker'
-# cask 'keka'
-# cask 'microsoft-teams'
-# cask 'opensc'
-cask 'tableplus'
-{{- end }}
 
 cask 'alfred'
 # cask 'anki'
@@ -112,10 +93,8 @@ cask 'bunch'
 # cask 'dash' - in setapp
 # cask 'do-not-disturb'
 cask "duckduckgo"
-cask 'espanso'
 cask 'firefox'
 cask 'imageoptim'
-cask 'iterm2'
 # cask 'keybase'
 cask 'keyboard-maestro'
 cask 'kitty'
@@ -136,13 +115,37 @@ cask 'rocket'
 cask 'reikey'
 cask 'setapp'
 # cask 'skype'
-cask 'sublime-text'
 cask 'suspicious-package'
 # cask 'timing' - in setapp
 cask 'tower'
 cask 'qlimagesize'
 # cask 'qlmarkdown' # Looks like this feature is now built into Sonoma!
 cask 'quicklook-json'
+{{- end }}
+
+# Install these on iMac only
+{{- if eq .chezmoi.hostname "Moncefs-iMac" }}
+cask 'backblaze'
+cask 'beatport-pro'
+cask 'farrago'
+cask 'qlcolorcode'
+cask 'qlstephen'
+cask 'screenflow'
+mas 'Vimeo - Video Management', id: 1356686763
+{{- end }}
+
+# Install these on work machines only
+{{- if eq .location "work" }}
+# brew 'chamber'
+# brew 'pre-commit'
+# brew 'terraform'
+# cask 'aws-vault'
+# cask 'docker'
+# cask 'keka'
+# cask 'microsoft-teams'
+# cask 'opensc'
+# cask 'tableplus'
+{{- end }}
 
 # Fonts
 # tap 'homebrew/cask-fonts'
